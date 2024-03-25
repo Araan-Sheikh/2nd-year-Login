@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #000000;
   }
   .container {
     display: flex;
@@ -85,4 +85,14 @@ body {
     100% {
       box-shadow:  0 0 20px #d8d101, 0 0 30px #b7044f, 0 0 40px #e0ca02;
     }
+  }
+  .card {
+    background-color: #000000;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
   }
