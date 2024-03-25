@@ -43,7 +43,7 @@ body {
     transition: background-color 0.3s ease;
   }
   .btn:hover {
-    background-color: #0b70a7;
+    background-color: #ffffff;
   }
   
   @media screen and (max-width: 768px) {
@@ -77,22 +77,22 @@ body {
 
   @keyframes glow {
     0% {
-      box-shadow: 0 0 10px #ede100, 0 0 20px #a00467, 0 0 30px #dbd00f;
+      box-shadow: 0 0 10px #ffffff, 0 0 20px #ce0b6d, 0 0 30px #04bbc8;
     }
     50% {
-      box-shadow: 0 0 20px #d8d101, 0 0 30px #b7044f, 0 0 40px #e0ca02;
+      box-shadow: 0 0 20px #24e806, 0 0 30px #4fc50a, 0 0 40px #3fc506;
     }
     100% {
-      box-shadow:  0 0 20px #d8d101, 0 0 30px #b7044f, 0 0 40px #e0ca02;
+      box-shadow:  0 0 20px #a3a303, 0 0 30px #c6b203, 0 0 40px #aab606;
     }
   }
   .card {
     background-color: #000000;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(253, 245, 245, 0.5);
     transition: box-shadow 0.3s ease;
   }
   
   .card:hover {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(236, 231, 231, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
   }
