@@ -96,3 +96,29 @@ body {
   .card:hover {
     box-shadow: 0 0 20px rgba(236, 231, 231, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
   }
+  /* Style for label */
+label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Style for input box */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Style for submit button */
+
+label {
+  color: #ffffff; /* Change this to the desired color */
+  font-size: 20px;
+  margin-bottom: 10px;
+  display: block;
+}
