@@ -30,18 +30,19 @@
 <script>
 function validateForm() {
     var nameInput = document.getElementById("name").value;
-    var usnInput = document.getElementById("usn").value;
+    var usnInput = document.getElementById("usn").value.toUpperCase();
+    var regex = /^NNM23[A-Z]{2}\d{3}$/;
     if (nameInput.trim() === "") {
         alert("Please enter your name.");
         return false;
-    } else if (!usnInput.toUpperCase().startsWith("NNM23")) {
+    } else if (!regex.test(usnInput)) {
         alert("Only students with correct USN are allowed to enter the Academic pal website.");
         return false;
     } else {
-        document.getElementById("usnForm").action = "https://academicpal.vercel.app/";
         return true;
     }
 }
+
 </script>
 </body>
 </html>
