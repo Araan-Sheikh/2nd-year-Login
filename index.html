@@ -35,16 +35,21 @@ function validateForm() {
     var nameInput = document.getElementById("name").value;
     var usnInput = document.getElementById("usn").value.toUpperCase();
     var regex = /^NNM23[A-Z]{2}\d{3}$/;
+    var disallowedUSNs = ["NNM23CS257", "NNM23CS256"];
+
     if (nameInput.trim() === "") {
         alert("Please enter your name.");
         return false;
     } else if (!regex.test(usnInput)) {
-        alert("Enter valid USN .");
+        alert("Enter valid USN.");
+        return false;
+    } else if (disallowedUSNs.includes(usnInput)) {
+        alert("Krithika Raviraj is not allowed to enter.");
         return false;
     } else {
         return true;
     }
-}
+  }
 
 </script>
 </body>
