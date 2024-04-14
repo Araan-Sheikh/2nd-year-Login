@@ -1,122 +1,93 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .card {
-    max-width: 80%;
-    background-color: #000000;
-    border-radius: 15px;
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    text-align: center;
-  }
-  .logo {
-    max-width: 250px;
-  }
-  h1 {
-    color: #ffffff;
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #ffffff;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  max-width: 80%;
+  background-color: #000000;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(253, 245, 245, 0.5);
+  padding: 30px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.logo {
+  max-width: 250px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+      padding: 20px;
+  }
+  h1 {
+      font-size: 24px;
+  }
   p {
-    color: #ffffff;
-    font-size: 18px;
-    margin-bottom: 20px;
+      font-size: 16px;
   }
   .btn {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  .btn:hover {
-    background-color: #ffffff;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .card {
-      padding: 20px;
-    }
-    h1 {
-      font-size: 24px;
-    }
-    p {
-      font-size: 16px;
-    }
-    .btn {
       padding: 12px 30px;
       font-size: 16px;
-    }
   }
-  .btn {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    animation: glow 2s linear infinite alternate;
-  }
+}
 
-  @keyframes glow {
-    0% {
-      box-shadow: 0 0 10px #ffffff, 0 0 20px #ce0b6d, 0 0 30px #04bbc8;
-    }
-    50% {
-      box-shadow: 0 0 20px #24e806, 0 0 30px #4fc50a, 0 0 40px #3fc506;
-    }
-    100% {
-      box-shadow:  0 0 20px #a3a303, 0 0 30px #c6b203, 0 0 40px #aab606;
-    }
-  }
-  .card {
-    background-color: #000000;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(253, 245, 245, 0.5);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    box-shadow: 0 0 20px rgba(236, 231, 231, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
-  }
-  /* Style for label */
+/* Style for label */
 label {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
   display: block;
+  color: #0c7bea;
 }
 
 /* Style for input box */
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -126,10 +97,41 @@ input[type="text"] {
 }
 
 /* Style for submit button */
+input[type="submit"] {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  animation: glow 2s linear infinite alternate;
+}
 
-label {
-  color: #0c7bea; /* Change this to the desired color */
-  font-size: 20px;
-  margin-bottom: 10px;
+@keyframes glow {
+  0% {
+      box-shadow: 0 0 10px #ffffff, 0 0 20px #ce0b6d, 0 0 30px #04bbc8;
+  }
+  50% {
+      box-shadow: 0 0 20px #24e806, 0 0 30px #4fc50a, 0 0 40px #3fc506;
+  }
+  100% {
+      box-shadow: 0 0 20px #a3a303, 0 0 30px #c6b203, 0 0 40px #aab606;
+  }
+}
+
+/* Hover effect for the card */
+.card:hover {
+  box-shadow: 0 0 20px rgba(236, 231, 231, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
+}
+
+/* Validation message */
+.validation-message {
+  font-size: 14px;
+  color: red;
   display: block;
+  margin-top: 5px;
 }
