@@ -23,14 +23,42 @@
       <input type="text" id="name" name="name"><br>
 
       <label for="usn">Enter your USN (University Serial Number):</label><br>
-      <input type="text" id="usn" name="usn"><br>
-      
+      <input type="text" id="usn" name="usn" maxlength="12" pattern="NNM23[A-Z]{2}\d{3}" title="Enter valid USN format: NNM23XX123" placeholder="NNM23XX123" autocomplete="off"><br>
+      <span id="usnValidationMessage" class="validation-message"></span>
+     
       <input type="submit" class="btn" value="Enter Academic pal">
     </form>
   </div>
 </div>
 
 <script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var usnInput = document.getElementById('usn');
+
+  usnInput.addEventListener('input', function() {
+    var usnValidationMessage = document.getElementById('usnValidationMessage');
+    var usnValue = usnInput.value.toUpperCase();
+    var regex = /^NNM23[A-Z]{2}\d{3}$/;
+
+    if (!regex.test(usnValue)) {
+      usnValidationMessage.textContent = 'Enter valid USN.';
+      usnValidationMessage.style.color = 'red';
+    } else {
+      usnValidationMessage.textContent = '';
+    }
+  });
+});
+
+
+
+
+
+
+    // Update the input value with the masked value
+    usnInput.value = maskedValue;
+
 function validateForm() {
     var nameInput = document.getElementById("name").value;
     var usnInput = document.getElementById("usn").value.toUpperCase();
