@@ -43,10 +43,8 @@ function validateForm() {
     } else if (!regex.test(usnInput)) {
         alert("Enter valid USN.");
         return false;
-    } else if (disallowedUSNs.includes(usnInput)) {
-        alert("Krithika Raviraj is not allowed to enter.");
-        return false;
-    } else {
+    } 
+     else {
         return true;
     }
   }
