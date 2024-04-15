@@ -1,3 +1,4 @@
+/* CSS styles... */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -94,38 +95,31 @@ input[type="email"] {
   border: 1px solid #ccc;
   box-sizing: border-box;
   margin-bottom: 20px;
+  transition: border-color 0.3s ease; /* Smooth transition */
 }
 
-/* Style for submit button */
-input[type="submit"] {
-  display: inline-block;
-  padding: 15px 40px;
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  animation: glow 2s linear infinite alternate;
+/* Add animation effect when input is focused */
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #007bff; /* Change border color when input is focused */
+  animation: glow-border 1s infinite alternate; /* Apply glow animation */
 }
 
-@keyframes glow {
+/* Glow animation */
+@keyframes glow-border {
   0% {
-      box-shadow: 0 0 10px #ffffff, 0 0 20px #ce0b6d, 0 0 30px #04bbc8;
-  }
-  50% {
-      box-shadow: 0 0 20px #24e806, 0 0 30px #4fc50a, 0 0 40px #3fc506;
+    border-color: #007bff;
+    box-shadow: 0 0 5px #007bff;
   }
   100% {
-      box-shadow: 0 0 20px #a3a303, 0 0 30px #c6b203, 0 0 40px #aab606;
+    border-color: #007bff;
+    box-shadow: 0 0 15px #007bff;
   }
 }
 
 /* Hover effect for the card */
 .card:hover {
-  box-shadow: 0 0 20px rgba(236, 231, 231, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(15, 122, 176, 0.9), 0 0 40px rgba(28, 174, 231, 0.9);
 }
 
 /* Validation message */
