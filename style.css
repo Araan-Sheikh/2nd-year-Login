@@ -125,7 +125,7 @@ input[type="submit"] {
 
 /* Hover effect for the card */
 .card:hover {
-  box-shadow: 0 0 20px rgba(236, 231, 231, 0.9), 0 0 40px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px rgba(12, 65, 199, 0.9), 0 0 40px rgba(10, 78, 214, 0.9);
 }
 
 /* Validation message */
