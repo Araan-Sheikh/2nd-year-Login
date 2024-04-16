@@ -12,7 +12,7 @@
   <div class="card">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" alt="Academic Pal Logo" class="logo" width="150" height="150">
 
-    <h1>Welcome to  Academic Pal &#127891;</h1>
+    <h1>Welcome to Academic Pal &#127891;</h1>
 
     <p>Empowering Your Academic Journey</p>
    
@@ -22,11 +22,11 @@
       <input type="text" id="name" name="name"><br>
 
       <label for="usn">Enter your USN :</label><br>
-      <input type="text" id="usn" name="usn" maxlength="12" pattern="NNM23[A-Z]{2}\d{3}" title="Enter valid USN format: NNM23XXXXX" placeholder="NNM23XXXXX" autocomplete="off"><br>
+      <input type="text" id="usn" name="usn" maxlength="12" title="Enter valid USN format" placeholder="NNM23XXXXX" autocomplete="off"><br>
       <span id="usnValidationMessage" class="validation-message"></span><br>
 
       <label for="email">Enter your Email ID:</label><br>
-      <input type="email" id="email" name="email" pattern="^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.IN$" title="Enter valid email format: NNM23xx123@NMAMIT.IN or nnm23xx123@nmamit.in" placeholder="NNM23xx123@NMAMIT.IN" autocomplete="off"><br>
+      <input type="email" id="email" name="email" pattern="^(nnm23)[a-zA-Z]{2}\d{3}@(nmamit)\.in$" title="Enter valid email format: nnm23xxxxx@nmamit.in" placeholder="nnm23xxxxx@nmamit.in" autocomplete="off"><br>
       <span id="emailValidationMessage" class="validation-message"></span><br>
       
       <input type="submit" class="btn" value="Enter Academic pal">
@@ -38,11 +38,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   var usnInput = document.getElementById('usn');
   var emailInput = document.getElementById('email');
+  var usnValidationMessage = document.getElementById('usnValidationMessage');
 
   usnInput.addEventListener('input', function() {
-    var usnValidationMessage = document.getElementById('usnValidationMessage');
     var usnValue = usnInput.value.toUpperCase();
-    var regex = /^NNM23[A-Z]{2}\d{3}$/;
+    // Adjusted regex to allow a wider range of valid USN formats
+    var regex = /^[A-Za-z0-9]{5,12}$/;
 
     if (!regex.test(usnValue)) {
       usnValidationMessage.textContent = 'Enter valid USN.';
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
   emailInput.addEventListener('input', function() {
     var emailValidationMessage = document.getElementById('emailValidationMessage');
     var emailValue = emailInput.value;
-    var emailRegex = /^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.IN$/;
+    var emailRegex = /^(nnm23)[a-zA-Z]{2}\d{3}@(nmamit)\.in$/;
 
     if (!emailRegex.test(emailValue)) {
       emailValidationMessage.textContent = 'Enter valid email format.';
@@ -70,8 +71,9 @@ function validateForm() {
   var nameInput = document.getElementById("name").value;
   var emailInput = document.getElementById("email").value;
   var usnInput = document.getElementById("usn").value.toUpperCase();
-  var usnRegex = /^NNM23[A-Z]{2}\d{3}$/;
-  var emailRegex = /^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.IN$/;
+
+  // Adjusted regex to allow a wider range of valid USN formats
+  var usnRegex = /^[A-Za-z0-9]{5,12}$/;
 
   if (nameInput.trim() === "") {
     alert("Please enter your name.");
