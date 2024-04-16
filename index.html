@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   usnInput.addEventListener('input', function() {
     var usnValue = usnInput.value.toUpperCase();
-    // Adjusted regex to allow a wider range of valid USN formats
     var regex = /^[A-Za-z0-9]{5,12}$/;
 
     if (!regex.test(usnValue)) {
@@ -71,9 +70,13 @@ function validateForm() {
   var nameInput = document.getElementById("name").value;
   var emailInput = document.getElementById("email").value;
   var usnInput = document.getElementById("usn").value.toUpperCase();
-
-  // Adjusted regex to allow a wider range of valid USN formats
   var usnRegex = /^[A-Za-z0-9]{5,12}$/;
+
+  // Check if the USN and email are not allowed
+  if (usnInput === "NNM23CS257" && emailInput === "nnm23cs257@nmamit.in") {
+    alert("You are not allowed to enter.");
+    return false;
+  }
 
   if (nameInput.trim() === "") {
     alert("Please enter your name.");
