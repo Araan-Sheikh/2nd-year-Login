@@ -18,15 +18,15 @@
    
     <form id="usnForm" action="https://academicpal.vercel.app/" method="get" onsubmit="return validateForm()">
 
-      <label for="name">Enter your Name:</label><br>
+      <label for="name">Enter your name:</label><br>
       <input type="text" id="name" name="name"><br>
 
       <label for="usn">Enter your USN :</label><br>
-      <input type="text" id="usn" name="usn" maxlength="12" title="Enter valid USN format" placeholder="NNM23XXXXX" autocomplete="off"><br>
+      <input type="text" id="usn" name="usn" maxlength="12" pattern="NNM23[A-Z]{2}\d{3}" title="Enter valid USN format: NNM23XXXXX" placeholder="NNM23XXXXX" autocomplete="off"><br>
       <span id="usnValidationMessage" class="validation-message"></span><br>
 
-      <label for="email">Enter your Email ID:</label><br>
-      <input type="email" id="email" name="email" pattern="^(nnm23)[a-zA-Z]{2}\d{3}@(nmamit)\.in$" title="Enter valid email format: nnm23xxxxx@nmamit.in" placeholder="nnm23xxxxx@nmamit.in" autocomplete="off"><br>
+      <label for="email">Enter your email ID:</label><br>
+      <input type="email" id="email" name="email" pattern="^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.IN$" title="Enter valid email format: NNM23xx123@NMAMIT.IN or nnm23xx123@nmamit.in" placeholder="NNM23xx123@NMAMIT.IN" autocomplete="off"><br>
       <span id="emailValidationMessage" class="validation-message"></span><br>
       
       <input type="submit" class="btn" value="Enter Academic pal">
@@ -38,11 +38,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   var usnInput = document.getElementById('usn');
   var emailInput = document.getElementById('email');
-  var usnValidationMessage = document.getElementById('usnValidationMessage');
 
   usnInput.addEventListener('input', function() {
+    var usnValidationMessage = document.getElementById('usnValidationMessage');
     var usnValue = usnInput.value.toUpperCase();
-    var regex = /^[A-Za-z0-9]{5,12}$/;
+    var regex = /^NNM23[A-Z]{2}\d{3}$/;
 
     if (!regex.test(usnValue)) {
       usnValidationMessage.textContent = 'Enter valid USN.';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
   emailInput.addEventListener('input', function() {
     var emailValidationMessage = document.getElementById('emailValidationMessage');
     var emailValue = emailInput.value;
-    var emailRegex = /^(nnm23)[a-zA-Z]{2}\d{3}@(nmamit)\.in$/;
+    var emailRegex = /^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.IN$/;
 
     if (!emailRegex.test(emailValue)) {
       emailValidationMessage.textContent = 'Enter valid email format.';
@@ -70,13 +70,8 @@ function validateForm() {
   var nameInput = document.getElementById("name").value;
   var emailInput = document.getElementById("email").value;
   var usnInput = document.getElementById("usn").value.toUpperCase();
-  var usnRegex = /^[A-Za-z0-9]{5,12}$/;
-
-  // Check if the USN and email are not allowed
-  if (usnInput === "NNM23CS257" && emailInput === "nnm23cs257@nmamit.in") {
-    alert("You are not allowed to enter.");
-    return false;
-  }
+  var usnRegex = /^NNM23[A-Z]{2}\d{3}$/;
+  var emailRegex = /^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.IN$/;
 
   if (nameInput.trim() === "") {
     alert("Please enter your name.");
@@ -86,6 +81,9 @@ function validateForm() {
     return false;
   } else if (!usnRegex.test(usnInput)) {
     alert("Enter valid USN.");
+    return false;
+  }else if (usnInput === "NNM23CS257") {
+    alert("You are not allowed to enter Academic Pal.");
     return false;
   } else {
     return true;
