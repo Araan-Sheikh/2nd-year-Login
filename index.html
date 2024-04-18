@@ -34,6 +34,8 @@
   </div>
 </div>
 
+
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   var usnInput = document.getElementById('usn');
@@ -89,6 +91,36 @@ function validateForm() {
     return true;
   }
 }
+
+function validateForm() {
+  var nameInput = document.getElementById("name").value;
+  var emailInput = document.getElementById("email").value;
+  var usnInput = document.getElementById("usn").value.toUpperCase();
+  var usnRegex = /^NNM23[A-Z]{2}\d{3}$/;
+  var emailRegex = /^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.IN$/;
+
+  if (nameInput.trim() === "") {
+    alert("Please enter your name.");
+    return false;
+  } else if (!emailRegex.test(emailInput)) {
+    alert("Enter valid email address.");
+    return false;
+  } else if (!usnRegex.test(usnInput)) {
+    alert("Enter valid USN.");
+    return false;
+  } else if (usnInput === "NNM23CS257") {
+    alert("You are not allowed to enter Academic Pal.");
+    return false;
+  } else {
+    // If all inputs are valid, show a popup message with the user's details
+    var userDetails = "Name: " + nameInput + "\nEmail: " + emailInput + "\nUSN: " + usnInput;
+    alert("Details entered:\n\n" + userDetails);
+    return true;
+  }
+}
+
+
+
 </script>
 </body>
 </html>
