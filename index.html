@@ -114,6 +114,9 @@ function validateForm() {
   } else {
     // If all inputs are valid, show a popup message with the user's details
     var userDetails = "Name: " + nameInput + "\nEmail: " + emailInput + "\nUSN: " + usnInput;
+    var currentDate = new Date().toLocaleString();
+    var message = "Details entered:\n\n" + userDetails + "\n\nEntered on: " + currentDate;
+    alert(message);
     alert("Details entered:\n\n" + userDetails);
     return true;
   }
