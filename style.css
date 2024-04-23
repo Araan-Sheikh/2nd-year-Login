@@ -183,3 +183,21 @@ input[type="email"]:focus {
 }
 
 
+/* Add this CSS to your existing style.css file or embed it within <style> tags in your HTML file */
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 2.5s ease;
+}
+
+.validation-message.shake {
+  animation: shake 2.5s ease;
+}

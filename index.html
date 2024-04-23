@@ -34,7 +34,7 @@
       <input type="text" id="name" name="name"><br>
 
       <label for="usn">Enter your USN :</label><br>
-      <input type="text" id="usn" name="usn" maxlength="12" pattern="NNM23[A-Z]{2}\d{3}" title="Enter valid USN format: NNM23XXXXX" placeholder="NNM23XXXXX" autocomplete="off"><br>
+      <input type="text" id="usn" name="usn" maxlength="10" pattern="NNM23[A-Z]{2}\d{3}" title="Enter valid USN format: NNM23XXXXX" placeholder="NNM23XXXXX" autocomplete="off"><br>
       <span id="usnValidationMessage" class="validation-message"></span><br>
 
       <label for="email">Enter your email ID:</label><br>
@@ -134,6 +134,25 @@ function validateForm() {
   }
 }
 
+// Inside the input event listeners for the email and USN fields
+if (!regex.test(usnValue)) {
+  usnValidationMessage.textContent = 'Enter valid USN.';
+  usnValidationMessage.style.color = 'red';
+  usnInput.classList.add('shake'); // Add this line
+} else {
+  usnValidationMessage.textContent = '';
+  usnInput.classList.remove('shake'); // Add this line
+}
+
+// Similarly, for the email field
+if (!emailRegex.test(emailValue)) {
+  emailValidationMessage.textContent = 'Enter valid email format.';
+  emailValidationMessage.style.color = 'red';
+  emailInput.classList.add('shake'); // Add this line
+} else {
+  emailValidationMessage.textContent = '';
+  emailInput.classList.remove('shake'); // Add this line
+}
 
 
 </script>
