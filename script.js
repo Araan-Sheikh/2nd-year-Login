@@ -142,3 +142,37 @@ document.addEventListener('DOMContentLoaded', function() {
       return true;
     }
 }
+
+
+
+function validateForm() {
+  var nameInput = document.getElementById("name");
+  var usnInput = document.getElementById("usn");
+  var emailInput = document.getElementById("email");
+  
+  if (!nameInput.checkValidity()) {
+    nameInput.classList.add("shake");
+    setTimeout(function() {
+      nameInput.classList.remove("shake");
+    }, 500);
+    return false;
+  }
+  
+  if (!usnInput.checkValidity()) {
+    usnInput.classList.add("shake");
+    setTimeout(function() {
+      usnInput.classList.remove("shake");
+    }, 500);
+    return false;
+  }
+  
+  if (!emailInput.checkValidity()) {
+    emailInput.classList.add("shake");
+    setTimeout(function() {
+      emailInput.classList.remove("shake");
+    }, 500);
+    return false;
+  }
+  
+  return true;
+}
