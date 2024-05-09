@@ -68,3 +68,26 @@ function validateForm() {
     return true;
   }
 }
+
+
+
+
+
+
+
+
+
+
+document.getElementById('usnForm').addEventListener('submit', function() {
+  var name = document.getElementById('name').value;
+  var usn = document.getElementById('usn').value;
+  var email = document.getElementById('email').value;
+  
+  gtag('event', 'form_submission', {
+      'event_category': 'Form',
+      'event_label': 'Academic Pal Form Submission',
+      'name': name,
+      'usn': usn,
+      'email': email
+  });
+});
