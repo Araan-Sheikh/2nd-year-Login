@@ -1,27 +1,67 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Academic Pal Pop-up</title>
+<title>Academic Pal</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon"  style="filter: grayscale(100%);">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6YYNZVB1W1');
+</script>
+<!-- End of Google tag -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
+     crossorigin="anonymous"></script>
+     
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
+     crossorigin="anonymous"></script>
+
 </head>
 <body>
 
-<div class="popup-container">
-  <div class="popup">
+<div class="container">
+  <div class="card">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" alt="Academic Pal Logo" class="logo" width="150" height="150">
-    <h1>Academic Pal &#127891;</h1>
+
+    <h1>Welcome to Academic Pal &#127891;</h1>
+
+    <p>Empowering Your Academic Journey</p>
    
+    <form id="usnForm" action="https://academic-pal.vercel.app/" method="get" onsubmit="return validateForm()">
+
+      <label for="name">Enter your name:</label><br>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="usn">Enter your USN :</label><br>
+      <input type="text" id="usn" name="usn" maxlength="10" pattern="NNM23[A-Z]{2}\d{3}" title="Enter valid USN format: NNM23XXXXX" placeholder="NNM23XXXXX" autocomplete="off"><br>
+      <span id="usnValidationMessage" class="validation-message"></span><br>
+
+      <label for="email">Enter your email ID:</label><br>
+      <input type="email" id="email" name="email" pattern="^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$" title="Enter valid email format: NNM23xx123@NMAMIT.in or nnm23xx123@nmamit.in" placeholder="nnm23xx123@nmamit.in" autocomplete="off"><br>
+      <span id="emailValidationMessage" class="validation-message"></span><br>
+      
+      <input type="submit" class="btn" value="Enter Academic pal">
+    </form>
   </div>
 </div>
 
-<script>
-  setTimeout(function() {
-    window.location.href = "https://academicpal7.onrender.com/";
-  }, 4000); // 5 seconds
-</script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
+
+
