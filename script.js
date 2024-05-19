@@ -91,3 +91,10 @@ document.getElementById('usnForm').addEventListener('submit', function() {
       'email': email
   });
 });
+
+
+
+function enterAsOldUser() {
+  window.location.href = "https://academic-pal.vercel.app/";
+}
+

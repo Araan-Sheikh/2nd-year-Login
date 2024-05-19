@@ -288,3 +288,36 @@ input[type="email"]:focus {
   color: #ffffff; /* Change text color */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
 }
+
+#oldUserBtn {
+  background-color: #ffffff;
+  margin-top: 20px;
+}
+
+#oldUserBtn:hover {
+  background-color: #ffffff;
+}
+
+/* Existing styles */
+.container {
+  /* Your existing container styles */
+}
+
+.card {
+  /* Your existing card styles */
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+}
