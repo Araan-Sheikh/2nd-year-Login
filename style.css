@@ -1,323 +1,93 @@
 body {
+  background-color: #ffffff;
+  color: #000;
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #000000;
-}
-
-.container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .card {
-  max-width: 80%;
-  background-color: #000000;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(253, 245, 245, 0.5);
-  padding: 30px;
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
-  transition: box-shadow 0.3s ease;
-}
-
-.logo {
-  max-width: 250px;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ffffff;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 2px solid #333;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 24px;
 }
 
 p {
-  color: #ffffff;
-  font-size: 18px;
   margin-bottom: 20px;
+  color: #000;
+  font-size: 16px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 15px 40px;
-  background-color: #ffffff;
-  color: #000000;
-  border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #ffffff;
-}
-
-@media screen and (max-width: 768px) {
-  .card {
-      padding: 20px;
-  }
-  h1 {
-      font-size: 24px;
-  }
-  p {
-      font-size: 16px;
-  }
-  .btn {
-      padding: 12px 30px;
-      font-size: 16px;
-  }
-}
-
-/* Style for label */
 label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
   display: block;
-  color: #0c7bea;
+  margin-bottom: 5px;
+  text-align: left;
+  color: #000;
 }
 
-/* Style for input box */
 input[type="text"],
 input[type="email"] {
   width: 100%;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  color: #000;
+  background-color: #fff;
   box-sizing: border-box;
-  margin-bottom: 20px;
 }
 
-/* Style for submit button */
-input[type="submit"] {
-  display: inline-block;
-  padding: 15px 40px;
-  background-color: #ffffff;
-  color: #000000;
+input[type="submit"],
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
   border: none;
-  border-radius: 30px;
-  font-size: 18px;
-  text-decoration: none;
-  position: relative;
-  overflow: hidden;
-  animation: glow 2s linear infinite alternate;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
 }
 
-@keyframes glow {
-  0% {
-      box-shadow: 0 0 10px #ffffff, 0 0 20px #ce0b6d, 0 0 30px #04bbc8;
-  }
-  50% {
-      box-shadow: 0 0 20px #24e806, 0 0 30px #4fc50a, 0 0 40px #3fc506;
-  }
-  100% {
-      box-shadow: 0 0 20px #a3a303, 0 0 30px #c6b203, 0 0 40px #aab606;
-  }
+input[type="submit"]:hover,
+button:hover {
+  background-color: #444;
 }
 
-/* Hover effect for the card */
-.card:hover {
-  box-shadow: 0 0 20px rgba(12, 65, 199, 0.9), 0 0 40px rgba(10, 78, 214, 0.9);
-}
-
-/* Validation message */
 .validation-message {
-  font-size: 14px;
   color: red;
-  display: block;
-  margin-top: 5px;
+  font-size: 12px;
 }
 
-
-
-/* Style for label */
-label {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  display: block;
-  color: #0c7bea;
-  border: 2px solid transparent; /* Initially transparent border */
-  transition: border-color 0.3s ease; /* Smooth transition */
-  cursor: pointer; /* Change cursor to pointer on hover */
-}
-
-/* Add hover effect for label */
-/* Style for input box */
-input[type="text"],
-input[type="email"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  transition: border-color 0.3s ease; /* Smooth transition */
-}
-
-/* Add animation effect when input is focused */
-input[type="text"]:focus,
-input[type="email"]:focus {
-  border-color: #007bff; /* Change border color when input is focused */
-  animation: glow-border 1s infinite alternate; /* Apply glow animation */
-}
-
-/* Glow animation */
-@keyframes glow-border {
-  0% {
-    border-color: #007bff;
-    box-shadow: 0 0 5px #007bff;
-  }
-  100% {
-    border-color: #007bff;
-    box-shadow: 0 0 15px #007bff;
-  }
-}
-
-
-/* Add this CSS to your existing style.css file or embed it within <style> tags in your HTML file */
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(-10px); }
-  40% { transform: translateX(10px); }
-  60% { transform: translateX(-10px); }
-  80% { transform: translateX(10px); }
-  100% { transform: translateX(0); }
-}
-
-.shake {
-  animation: shake 2.5s ease;
-}
-
-.validation-message.shake {
-  animation: shake 2.5s ease;
-}
-
-
-
-
-/* Add this at the end of your CSS file */
-
-.shake {
-  animation: shake 0.5s ease-in-out;
-}
-
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-10px);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translateX(10px);
-  }
-}
-
-.popup-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* semi-transparent black background */
-}
-
-.popup {
-  background-color: black; /* background color of the pop-up */
-  color: white; /* text color */
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.logo {
-  margin-bottom: 20px;
-}
-
-.popup-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* semi-transparent black background */
-}
-
-.popup {
-  background-color: black; /* background color of the pop-up */
-  color: white; /* text color */
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.logo {
-  margin-bottom: 20px;
-  animation: pulse 1s infinite alternate; /* Add animation */
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1); /* Start with normal size */
-  }
-  100% {
-    transform: scale(1.1); /* Increase size */
-  }
-}
-
-
-.popup h1 {
-  font-size: 24px; /* Set font size */
-  font-weight: bold; /* Make it bold */
-  color: #ffffff; /* Change text color */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
-}
-
-#oldUserBtn {
-  background-color: #ffffff;
-  margin-top: 20px;
-}
-
-#oldUserBtn:hover {
-  background-color: #ffffff;
-}
-
-/* Existing styles */
-.container {
-  /* Your existing container styles */
-}
-
-.card {
-  /* Your existing card styles */
-}
-
-.logo {
-  width: 150px;
-  height: 150px;
-  max-width: 100%;
-  height: auto;
-}
-
-/* Responsive styles */
 @media (max-width: 600px) {
-  .logo {
-    width: 100px;
-    height: auto;
+  .card {
+      width: 100%;
+      padding: 20px;
+      margin: 0 10px;
   }
 }
