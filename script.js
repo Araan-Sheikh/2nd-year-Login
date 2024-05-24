@@ -101,4 +101,4 @@ function enterAsOldUser() {
 // Hide the loading overlay after 3 seconds
 setTimeout(function() {
   document.getElementById('loading-overlay').style.display = 'none';
-}, 2000);
+}, 3000);
