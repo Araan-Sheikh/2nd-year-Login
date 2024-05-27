@@ -319,9 +319,7 @@ gtag('config', 'G-6YYNZVB1W1');
             } else if (!emailRegex.test(email)) {
                 alert("Enter valid email address.");
                 return false;
-            } else if (usn === "NNM23CS257") {
-                alert("You are not allowed to enter Academic Pal.");
-                return false;
+          
             } else {
                 // Store user details locally
                 var userDetails = {
@@ -444,10 +442,7 @@ gtag('config', 'G-6YYNZVB1W1');
         } else if (!usnRegex.test(usnInput)) {
             alert("Enter valid USN.");
             return false;
-        } else if (usnInput === "NNM23CS257") {
-            alert("You are not allowed to enter Academic Pal.");
-            return false;
-        } else {
+        }  else {
             // Store user details locally
             var userDetails = {
                 name: nameInput,
