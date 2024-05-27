@@ -4,42 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Pal Login</title>
-    <link rel="stylesheet" href="style.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-     crossorigin="anonymous"></script>
-<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon"  style="filter: grayscale(100%);">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000; /* Ensure a dark background for visibility */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
-  gtag('config', 'G-6YYNZVB1W1');
-</script>
-<!-- End of Google tag -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-     crossorigin="anonymous"></script>
-     
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-     crossorigin="anonymous"></script>
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: #ffffff;
+            padding: 20px;
+            max-width: 600px;
+        }
+        .content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #ffffff;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            color: #ffffff;
+            background-color: transparent;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #ffffff;
+        }
+        @media (max-width: 768px) {
+            .content h1 {
+                font-size: 2rem;
+            }
+            .content p {
+                font-size: 1rem;
+            }
+        }
+        .btn {
+        display: inline-block;
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        font-size: 1rem;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+    }
 
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+   
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    .btn:active {
+        transform: scale(0.95);
+    }
+    </style>
 </head>
 <body>
-
-  <div id="loading-overlay">
-    <div class="spinner">
-      <div class="dot dot1"></div>
-      <div class="dot dot2"></div>
-      <div class="dot dot3"></div>
-    </div>
-  </div>
-  
-    <div class="container">
-        <div class="card">
-            <h1>Welcome to Academic Pal &#127891;</h1>
-            <p>Empowering Your Academic Journey</p>
+    <div class="content">
+        <h1>Academic Pal</h1>
+        <p>Your source for educational resources.</p>
+        <div class="form-container">
             <form id="usnForm" action="https://academic-pal.vercel.app/" method="get" onsubmit="return validateForm()">
                 <label for="name">Enter your name:</label><br>
                 <input type="text" id="name" name="name"><br>
@@ -53,34 +134,186 @@
             </form>
             <p>If you are a returning user, you can skip the form:</p>
             <button class="btn" id="oldUserBtn" onclick="enterAsOldUser()">Enter Directly</button>
-
-
-            <p><a href="https://www.privacypolicies.com/live/0b697d9c-92ec-451c-8619-68f264fabd20" target="_blank">Privacy Policy</a></p>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script>
+        // Set up the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // Create particle geometry
+        const particles = new THREE.BufferGeometry();
+        const particleCount = 10000;
+        const positions = new Float32Array(particleCount * 3);
+
+        for (let i = 0; i < particleCount; i++) {
+            positions[i * 3] = (Math.random() * 2 - 1) * 1000;
+            positions[i * 3 + 1] = (Math.random() * 2 - 1) * 1000;
+            positions[i * 3 + 2] = (Math.random() * 2 - 1) * 1000;
+        }
+
+        particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+        const particleMaterial = new THREE.PointsMaterial({
+            color: 0x888888,
+            size: 1,
+            sizeAttenuation: true,
+            transparent: true,
+            opacity: 0.7
+        });
+
+        const particleSystem = new THREE.Points(particles, particleMaterial);
+        scene.add(particleSystem);
+
+        camera.position.z = 500;
+
+        // GSAP Animation
+        function animateParticles() {
+            gsap.to(particleSystem.rotation, {
+                duration: 20,
+                y: Math.PI * 2,
+                ease: "none",
+                repeat: -1
+            });
+
+            gsap.to(particleSystem.rotation, {
+                duration: 40,
+                x: Math.PI * 2,
+                ease: "none",
+                repeat: -1
+            });
+
+            gsap.to(particleSystem.material, {
+                opacity: 1,
+                duration: 2,
+                ease: "power2.inOut",
+                yoyo: true,
+                repeat: -1
+            });
+        }
+
+        animateParticles();
+
+        // Render the scene
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var usnInput = document.getElementById('usn');
+            var emailInput = document.getElementById('email');
+
+            usnInput.addEventListener('input', function() {
+                var usnValidationMessage = document.getElementById('usnValidationMessage');
+                var usnValue = usnInput.value.toUpperCase();
+                var regex = /^NNM23[A-Z]{2}\d{3}$/;
+
+                if (!regex.test(usnValue)) {
+                    usnValidationMessage.textContent = 'Enter valid USN.';
+                    usnValidationMessage.style.color = 'red';
+                } else {
+                    usnValidationMessage.textContent = '';
+                }
+            });
+
+            emailInput.addEventListener('input', function() {
+                var emailValidationMessage = document.getElementById('emailValidationMessage');
+                var emailValue = emailInput.value;
+                var emailRegex = /^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/;
+
+                if (!emailRegex.test(emailValue)) {
+                    emailValidationMessage.textContent = 'Enter valid email format.';
+                    emailValidationMessage.style.color = 'red';
+                } else {
+                    emailValidationMessage.textContent = '';
+                }
+            });
+        });
+
+        // Form submission tracking with Google Analytics
+        document.getElementById('usnForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var name = document.getElementById('name').value;
+            var usn = document.getElementById('usn').value.toUpperCase();
+            var email = document.getElementById('email').value;
+
+            var usnRegex = /^NNM23[A-Z]{2}\d{3}$/;
+            var emailRegex = /^(NNM23|nnm23)[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/;
+
+            if (name.trim() === "") {
+                alert("Please enter your name.");
+                return false;
+            } else if (!usnRegex.test(usn)) {
+                alert("Enter valid USN.");
+                return false;
+            } else if (!emailRegex.test(email)) {
+                alert("Enter valid email address.");
+                return false;
+            } else if (usn === "NNM23CS257") {
+                alert("You are not allowed to enter Academic Pal.");
+                return false;
+            } else {
+                // Store user details locally
+                var userDetails = {
+                    name: name,
+                    email: email,
+                    usn: usn
+                };
+                localStorage.setItem('userDetails', JSON.stringify(userDetails));
+
+                // Show confirmation message
+                var currentDate = new Date().toLocaleString();
+                var message = "Details entered:\n\nName: " + name + "\nEmail: " + email + "\nUSN: " + usn + "\n\nEntered on: " + currentDate;
+                alert(message);
+
+                // Redirect to main website
+                enterAcademicPal(name, usn, email);
+            }
+        });
+
+        function enterAcademicPal(name, usn, email) {
+            // Display entered details
+            var detailsDisplay = document.createElement('div');
+            detailsDisplay.innerHTML = `
+                <h2>Welcome, ${name}!</h2>
+                <p>Email: ${email}</p>
+                <p>USN: ${usn}</p>
+            `;
+            document.body.appendChild(detailsDisplay);
+
+            // Redirect after 3 seconds
+            setTimeout(function() {
+                window.location.href = "https://academic-pal.vercel.app/";
+            }, 3000);
+        }
+
+        // Function to redirect as old user
+        function enterAsOldUser() {
+            window.location.href = "https://academic-pal.vercel.app/";
+        }
+
+        // Hide the loading overlay after 3 seconds
+        setTimeout(function() {
+            document.getElementById('loading-overlay').style.display = 'none';
+        }, 3000);
+    </script>
 </body>
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyBLZnLknv75Zt_uu9kbqPpNdxXX5SCmicI",
-      authDomain: "academicpal-3eda1.firebaseapp.com",
-      projectId: "academicpal-3eda1",
-      storageBucket: "academicpal-3eda1.appspot.com",
-      messagingSenderId: "346344569244",
-      appId: "1:346344569244:web:33439d5ab1948f3965b059",
-      measurementId: "G-Y0KRMQM9VC"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
 </html>
