@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Pal Login</title>
+    <link rel="manifest" href="/manifest.json">
+
     <!-- Google tag (gtag.js) -->
     
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRGC5Z06DK"></script>
@@ -316,16 +318,7 @@ var emailRegex = /^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/
         });
 
 
-        if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-      console.log('Service Worker registered with scope:', registration.scope);
-    }, function(error) {
-      console.log('Service Worker registration failed:', error);
-    });
-  });
-}
-
+  
 
 
 
@@ -497,6 +490,16 @@ var emailRegex = /^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/
 });
 
 
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('Service Worker registered with scope:', registration.scope);
+    }, function(error) {
+      console.log('Service Worker registration failed:', error);
+    });
+  });
+}
 
 
 
