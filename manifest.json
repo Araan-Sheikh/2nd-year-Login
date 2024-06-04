@@ -1,7 +1,7 @@
 {
     "name": "Academic Pal",
-    "short_name": "AcadPal",
-    "start_url": "/",
+    "short_name": "Academic Pal",
+    "start_url": "https://academicpal7.onrender.com/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
