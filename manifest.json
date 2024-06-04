@@ -1,19 +1,18 @@
 {
     "name": "Academic Pal",
     "short_name": "AcadPal",
-    "description": "Notes and resources for college students.",
-    "start_url": "/index.html",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
     "icons": [
       {
-        "src": "/images/icons/icon-192x192.png",
+        "src": "path/to/icon-192x192.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "/images/icons/icon-512x512.png",
+        "src": "path/to/icon-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
       }

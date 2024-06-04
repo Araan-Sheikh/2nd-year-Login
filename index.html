@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Pal Login</title>
     <!-- Google tag (gtag.js) -->
-    <link rel="manifest" href="/manifest.json">
+    
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRGC5Z06DK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -148,6 +148,7 @@ canvas {
    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
    crossorigin="anonymous"></script>
 <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon"  style="filter: grayscale(100%);">
+<link rel="manifest" href="/manifest.json">
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
@@ -302,6 +303,24 @@ var emailRegex = /^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/
                 }
             });
         });
+
+
+        if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('Service Worker registered with scope:', registration.scope);
+    }, function(error) {
+      console.log('Service Worker registration failed:', error);
+    });
+  });
+}
+
+
+
+
+
+
+
 
         // Form submission tracking with Google Analytics
         document.getElementById('usnForm').addEventListener('submit', function(event) {
@@ -470,32 +489,7 @@ var emailRegex = /^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/
 
 
 
-let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent the mini-infobar from appearing on mobile
-  e.preventDefault();
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-  // Update UI to notify the user they can add to home screen
-  showInstallPromotion();
-});
-
-buttonInstall.addEventListener('click', () => {
-  // Hide the app provided install promotion
-  hideInstallPromotion();
-  // Show the install prompt
-  deferredPrompt.prompt();
-  // Wait for the user to respond to the prompt
-  deferredPrompt.userChoice.then((choiceResult) => {
-    if (choiceResult.outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    } else {
-      console.log('User dismissed the install prompt');
-    }
-    deferredPrompt = null;
-  });
-});
 
     </script>
 </body>
