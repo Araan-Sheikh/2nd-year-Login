@@ -15,6 +15,38 @@ document.addEventListener('DOMContentLoaded', function() {
           usnValidationMessage.textContent = '';
       }
   });
+  function addToHomeScreen() {
+    if ('beforeinstallprompt' in window) {
+      // Trigger the PWA install prompt
+      let deferredPrompt;
+      const btn = document.querySelector('button');
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 76 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Update UI to notify the user they can add to home screen
+        btn.style.display = 'block';
+
+        btn.addEventListener('click', (e) => {
+          // Show the prompt
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the install prompt');
+            } else {
+              console.log('User dismissed the install prompt');
+            }
+            deferredPrompt = null;
+          });
+        });
+      });
+    }
+  }
+
+
 
   emailInput.addEventListener('input', function() {
       var emailValidationMessage = document.getElementById('emailValidationMessage');
