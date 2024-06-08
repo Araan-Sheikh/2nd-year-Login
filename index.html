@@ -1,541 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Pal Login</title>
-    <link rel="manifest" href="/manifest.json">
-
-    <!-- Google tag (gtag.js) -->
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CRGC5Z06DK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CRGC5Z06DK');
-</script>
-
-    <style>
-       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-body {
-    margin: 0;
-    overflow: hidden;
-    background: #000; /* Ensure a dark background for visibility */
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    color: #ffffff;
-    padding: 20px;
-    max-width: 600px;
-}
-
-.content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.form-container {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    text-align: center;
-}
-
-.form-container label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-    color: #ffffff;
-}
-
-.form-container input[type="text"],
-.form-container input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    color: #ffffff;
-    background-color: transparent;
-    box-sizing: border-box;
-}
-
-.form-container input[type="submit"] {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.form-container input[type="submit"]:hover {
-    background-color: #e6e6e6;
-}
-
-@media (max-width: 768px) {
-    .content h1 {
-        font-size: 2rem;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Pal</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="/manifest.json">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGP7FMD5G6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FGP7FMD5G6');
+  </script>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #000000, #000000);
+      color: #fff;
+      height: 100%;
+      overflow: hidden;
     }
-    .content p {
-        font-size: 1rem;
+
+    .entry-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
     }
-}
 
-.btn {
-    display: inline-block;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 0.75rem 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
-}
+    .entry-header {
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-.btn:hover {
-    background-color: #e6e6e6;
-}
+    .logo {
+      width: 150px;
+      height: auto;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-.btn:active {
-    transform: scale(0.95);
-}
-#loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 20;
-    font-size: 1.5rem;
-    display: none; /* Initially hidden */
-}
+    .headline {
+      color: #FFD700;
+      font-size: 2.5em;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out, colorChange 3s infinite;
+    }
 
+    @keyframes colorChange {
+      0%, 100% {
+        color: #FFD700;
+      }
+      50% {
+        color: red;
+      }
+    }
 
+    .enter-button {
+      background-color: #FFD700;
+      color: #000000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 5px;
+      margin-top: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      animation: pulse 1.5s infinite;
+      transition: background-color 0.3s;
+    }
 
-    </style>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-   crossorigin="anonymous"></script>
-<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon"  style="filter: grayscale(100%);">
-<link rel="manifest" href="/manifest.json">
+    .enter-button:hover {
+      background-color: #e6c200;
+    }
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+    .scroll-prompt {
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-gtag('config', 'G-6YYNZVB1W1');
-</script>
-<!-- End of Google tag -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-   crossorigin="anonymous"></script>
-   
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-   crossorigin="anonymous"></script>
+    .arrow {
+      font-size: 2em;
+      color: #FFD700;
+      animation: bounce 2s infinite;
+    }
 
+    .description {
+      margin-top: 20px;
+      color: #f0e68c;
+      font-size: 1.2em;
+      padding: 0 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
 
+    .install-button {
+      background-color: #FFD700;
+      color: #2c2c2c;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s, transform 0.3s;
+      margin-top: 20px;
+    }
+
+    .install-button:hover {
+      background-color: #FFC107;
+      transform: translateY(-2px);
+    }
+
+    .install-button:active {
+      background-color: #FFB300;
+      transform: translateY(0);
+    }
+
+    .install-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.5);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .headline {
+        font-size: 1.5em;
+      }
+
+      .enter-button {
+        font-size: 1em;
+        padding: 10px 20px;
+      }
+
+      .description {
+        font-size: 1em;
+      }
+    }
+
+    .entry-footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    .footer-links a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
 <body>
-    <div id="loading-overlay">
-        <p>Loading...</p>
-    </div>
-    <div class="content">
-        <button id="installBtn" onclick="addToHomeScreen()">Install Academic Pal APP</button>
-        
-        <h1>Academic Pal</h1>
-        <p>Your source for educational resources.</p>
-        <div class="form-container">
-            <form id="usnForm" action="https://academic-pal.vercel.app/" method="get" onsubmit="return validateForm()">
-                <label for="name">Enter your name:</label><br>
-                <input type="text" id="name" name="name"><br>
-                <label for="usn">Enter your USN:</label><br>
-                <input type="text" id="usn" name="usn" maxlength="10" pattern="NNM(23|24)[A-Z]{2}\d{3}" title="Enter valid USN format: NNM23XXXXX or NNM24XXXXX" placeholder="NNM23XXXXX" autocomplete="off"><br>
-                <span id="usnValidationMessage" class="validation-message"></span><br>
-                
-                <label for="email">Enter your email ID:</label><br>
-                <input type="email" id="email" name="email" pattern="^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$" title="Enter valid email format: NNM23xx123@NMAMIT.in, NNM24xx123@NMAMIT.in, nnm23xx123@nmamit.in or nnm24xx123@nmamit.in" placeholder="nnm23xx123@nmamit.in" autocomplete="off"><br>
-                <span id="emailValidationMessage" class="validation-message"></span><br>
-                
-                <input type="submit" class="btn" value="Enter Academic Pal">
-            </form>
-            <p>If you are a returning user, you can skip the form:</p>
-            <button class="btn" id="oldUserBtn" onclick="enterAsOldUser()">Enter Directly</button>
-        </div>
-    </div>
-  
-      
+  <div class="entry-page">
+    <header class="entry-header">
+      <img src="logo.png" alt="Academic Pal Logo" class="logo">
+      <h1 class="headline">Welcome to Academic Pal</h1>
+    </header>
+    <main class="entry-main">
+      <button id="installBtn" class="install-button" style="display: none;">Install Academic Pal</button>
+      <button class="enter-button">Enter</button>
+      <div class="scroll-prompt">
+        <span class="arrow">↓</span>
+      </div>
+      <p class="description">
+        Empowering students to reach their full potential with comprehensive resources and support.
+      </p>
+    </main>
+    <footer class="entry-footer">
+      <ul class="footer-links">
+        <li><a href="https://hari-hara7.github.io/new-academic-pal/#about">About Us</a></li>
+        <li><a href="https://academicpal.vercel.app/#contact">Contact</a></li>
+        <li><a href="https://www.privacypolicies.com/live/0b697d9c-92ec-451c-8619-68f264fabd20">Privacy Policy</a></li>
+      </ul>
+    </footer>
+  </div>
+  <script>
+    document.querySelector('.enter-button').addEventListener('click', () => {
+      window.location.href = 'https://hari-hara7.github.io/pop-page/';
+    });
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
-    <script>
+    let deferredPrompt;
+    const installBtn = document.getElementById('installBtn');
 
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.style.display = 'block';
 
-let deferredPrompt;
-  const installBtn = document.getElementById('installBtn');
-
-  window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent the browser from automatically showing the prompt
-    e.preventDefault();
-    // Stash the event so it can be triggered later
-    deferredPrompt = e;
-    // Show the install button
-    installBtn.style.display = 'block';
-  });
-
-  function addToHomeScreen() {
-    if (deferredPrompt) {
-      // Show the prompt
-      deferredPrompt.prompt();
-
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the install prompt');
-        } else {
-          console.log('User dismissed the install prompt');
-        }
-        deferredPrompt = null;
-        // Hide the install button
+      installBtn.addEventListener('click', () => {
         installBtn.style.display = 'none';
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+          } else {
+            console.log('User dismissed the install prompt');
+          }
+          deferredPrompt = null;
+        });
+      });
+    });
+
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then(registration => {
+          console.log('Service Worker registered with scope:', registration.scope);
+        }).catch(error => {
+          console.error('Service Worker registration failed:', error);
+        });
       });
     }
-  }
-
-
-
-
-        // Set up the scene, camera, and renderer
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        // Create particle geometry
-        const particles = new THREE.BufferGeometry();
-        const particleCount = 10000;
-        const positions = new Float32Array(particleCount * 3);
-
-        for (let i = 0; i < particleCount; i++) {
-            positions[i * 3] = (Math.random() * 2 - 1) * 1000;
-            positions[i * 3 + 1] = (Math.random() * 2 - 1) * 1000;
-            positions[i * 3 + 2] = (Math.random() * 2 - 1) * 1000;
-        }
-
-        particles.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-        const particleMaterial = new THREE.PointsMaterial({
-            color: 0x888888,
-            size: 1,
-            sizeAttenuation: true,
-            transparent: true,
-            opacity: 0.7
-        });
-
-        const particleSystem = new THREE.Points(particles, particleMaterial);
-        scene.add(particleSystem);
-
-        camera.position.z = 500;
-
-        // GSAP Animation
-        function animateParticles() {
-            gsap.to(particleSystem.rotation, {
-                duration: 20,
-                y: Math.PI * 2,
-                ease: "none",
-                repeat: -1
-            });
-
-            gsap.to(particleSystem.rotation, {
-                duration: 40,
-                x: Math.PI * 2,
-                ease: "none",
-                repeat: -1
-            });
-
-            gsap.to(particleSystem.material, {
-                opacity: 1,
-                duration: 2,
-                ease: "power2.inOut",
-                yoyo: true,
-                repeat: -1
-            });
-        }
-
-        animateParticles();
-
-        // Render the scene
-        function animate() {
-            requestAnimationFrame(animate);
-            renderer.render(scene, camera);
-        }
-
-        animate();
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var usnInput = document.getElementById('usn');
-            var emailInput = document.getElementById('email');
-
-            usnInput.addEventListener('input', function() {
-                var usnValidationMessage = document.getElementById('usnValidationMessage');
-var usnValue = usnInput.value.toUpperCase();
-var regex = /^NNM(23|24)[A-Z]{2}\d{3}$/;
-
-
-                if (!regex.test(usnValue)) {
-                    usnValidationMessage.textContent = 'Enter valid USN.';
-                    usnValidationMessage.style.color = 'red';
-                } else {
-                    usnValidationMessage.textContent = '';
-                }
-            });
-
-            emailInput.addEventListener('input', function() {
-                var emailValidationMessage = document.getElementById('emailValidationMessage');
-var emailValue = emailInput.value;
-var emailRegex = /^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/;
-
-                if (!emailRegex.test(emailValue)) {
-                    emailValidationMessage.textContent = 'Enter valid email format.';
-                    emailValidationMessage.style.color = 'red';
-                } else {
-                    emailValidationMessage.textContent = '';
-                }
-            });
-        });
-
-
-  
-
-
-
-
-
-
-
-        // Form submission tracking with Google Analytics
-        document.getElementById('usnForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            var name = document.getElementById('name').value;
-var usn = document.getElementById('usn').value.toUpperCase();
-var email = document.getElementById('email').value;
-
-var usnRegex = /^NNM(23|24)[A-Z]{2}\d{3}$/;
-var emailRegex = /^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/;
-            if (name.trim() === "") {
-                alert("Please enter your name.");
-                return false;
-            } else if (!usnRegex.test(usn)) {
-                alert("Enter valid USN.");
-                return false;
-            } else if (!emailRegex.test(email)) {
-                alert("Enter valid email address.");
-                return false;
-          
-            } else {
-                // Store user details locally
-                var userDetails = {
-                    name: name,
-                    email: email,
-                    usn: usn
-                };
-                localStorage.setItem('userDetails', JSON.stringify(userDetails));
-
-                // Show confirmation message
-                var currentDate = new Date().toLocaleString();
-                var message = "Details entered:\n\nName: " + name + "\nEmail: " + email + "\nUSN: " + usn + "\n\nEntered on: " + currentDate;
-                alert(message);
-
-                // Redirect to main website
-                enterAcademicPal(name, usn, email);
-            }
-        });
-
-        function enterAcademicPal(name, usn, email) {
-            // Display entered details
-            var detailsDisplay = document.createElement('div');
-            detailsDisplay.innerHTML = `
-                <h2>Welcome, ${name}!</h2>
-                <p>Email: ${email}</p>
-                <p>USN: ${usn}</p>
-            `;
-            document.body.appendChild(detailsDisplay);
-
-            // Redirect after 3 seconds
-            setTimeout(function() {
-                window.location.href = "https://academic-pal.vercel.app/";
-            }, 3000);
-        }
-
-        // Function to redirect as old user
-        function enterAsOldUser() {
-            window.location.href = "https://academic-pal.vercel.app/";
-        }
-
-        // Hide the loading overlay after 3 seconds
-        setTimeout(function() {
-            document.getElementById('loading-overlay').style.display = 'none';
-        }, 3000);
-
-
-
-        function showLoadingOverlay() {
-    document.body.style.overflow = 'hidden';
-    loadingOverlay.style.display = 'flex';
-}
-
-
-
-
-
-
-
-
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-    var usnInput = document.getElementById('usn');
-    var emailInput = document.getElementById('email');
-    var loadingOverlay = document.getElementById('loading-overlay');
-
-    usnInput.addEventListener('input', function() {
-        var usnValidationMessage = document.getElementById('usnValidationMessage');
-var usnValue = usnInput.value.toUpperCase();
-var regex = /^NNM(23|24)[A-Z]{2}\d{3}$/;
-        if (!regex.test(usnValue)) {
-            usnValidationMessage.textContent = 'Enter valid USN.';
-            usnValidationMessage.style.color = 'red';
-        } else {
-            usnValidationMessage.textContent = '';
-        }
-    });
-
-    emailInput.addEventListener('input', function() {
-        var emailValidationMessage = document.getElementById('emailValidationMessage');
-var emailValue = emailInput.value;
-var emailRegex = /^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/;
-        if (!emailRegex.test(emailValue)) {
-            emailValidationMessage.textContent = 'Enter valid email format.';
-            emailValidationMessage.style.color = 'red';
-        } else {
-            emailValidationMessage.textContent = '';
-        }
-    });
-
-    document.getElementById('usnForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (validateForm()) {
-            showLoadingOverlay();
-            setTimeout(function() {
-                window.location.href = "https://academic-pal.vercel.app/";
-            }, 1000); // Adjust the delay as needed
-        }
-    });
-
-    function showLoadingOverlay() {
-        loadingOverlay.style.display = 'flex';
-    }
-
-    function validateForm() {
-        var nameInput = document.getElementById("name").value;
-var emailInput = document.getElementById("email").value;
-var usnInput = document.getElementById("usn").value.toUpperCase();
-var usnRegex = /^NNM(23|24)[A-Z]{2}\d{3}$/;
-var emailRegex = /^(NNM(23|24)|nnm(23|24))[A-Za-z]{2}\d{3}@(NMAMIT|nmamit)\.in$/;
-        if (nameInput.trim() === "") {
-            alert("Please enter your name.");
-            return false;
-        } else if (!emailRegex.test(emailInput)) {
-            alert("Enter valid email address.");
-            return false;
-        } else if (!usnRegex.test(usnInput)) {
-            alert("Enter valid USN.");
-            return false;
-        }  else {
-            // Store user details locally
-            var userDetails = {
-                name: nameInput,
-                email: emailInput,
-                usn: usnInput
-            };
-            localStorage.setItem('userDetails', JSON.stringify(userDetails));
-            
-            // If all inputs are valid, show a popup message with the user's details
-            var currentDate = new Date().toLocaleString();
-            var message = "Details entered:\n\nName: " + nameInput + "\nEmail: " + emailInput + "\nUSN: " + usnInput + "\n\nEntered on: " + currentDate;
-            alert(message);
-            return true;
-        }
-    }
-
-    function enterAsOldUser() {
-        showLoadingOverlay();
-        setTimeout(function() {
-            window.location.href = "https://academic-pal.vercel.app/";
-        }, 1000); // Adjust the delay as needed
-    }
-});
-
-
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-      console.log('Service Worker registered with scope:', registration.scope);
-    }, function(error) {
-      console.log('Service Worker registration failed:', error);
-    });
-  });
-}
-
-
-
-
-
-    </script>
+  </script>
 </body>
 </html>
