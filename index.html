@@ -1,268 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academic Pal</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="manifest" href="/manifest.json">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGP7FMD5G6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FGP7FMD5G6');
-  </script>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to bottom, #000000, #000000);
-      color: #fff;
-      height: 100%;
-      overflow: hidden;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Pal Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        #logos {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        #logos img {
+            width: 150px;
+            margin: 0 10px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            z-index: 999;
+        }
+        #popup img {
+            width: 100px;
+            margin-bottom: 10px;
+        }
 
-    .entry-page {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #ffffff; /* Change background color */
+            color: #000000; /* Change text color */
+            text-align: center;
+            z-index: 999;
+        }
+        #popup img {
+            width: 300px;
+            margin: 0 auto; /* Center the image */
+            display: block; /* Ensure image is displayed as block element */
+            filter: invert(1); /* Invert logo colors */
+        }
+        #popup-message {
+            margin-top: 20px;
+        }
+        .pictures {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .pictures img {
+            width: 150px;
+            margin: 0 10px;
+        }
 
-    .entry-header {
-      margin-bottom: 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
+        #logos img {
+            width: 300px;
+            margin: 0 10px;
+            filter: invert(1); /* Invert logo colors */
+        }
 
-    .logo {
-      width: 150px;
-      height: auto;
-      animation: fadeIn 2s ease-in-out;
-    }
+        .pictures {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .pictures img {
+            width: 500px;
+            height: 300px; /* Increased width for desktop */
+            margin: 0 10px;
+        }
 
-    .headline {
-      color: #FFD700;
-      font-size: 2.5em;
-      margin-top: 20px;
-      animation: fadeIn 2s ease-in-out, colorChange 3s infinite;
-    }
-
-    @keyframes colorChange {
-      0%, 100% {
-        color: #FFD700;
-      }
-      50% {
-        color: red;
-      }
-    }
-
-    .enter-button {
-      background-color: #FFD700;
-      color: #000000;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border-radius: 5px;
-      margin-top: 50px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      animation: pulse 1.5s infinite;
-      transition: background-color 0.3s;
-    }
-
-    .enter-button:hover {
-      background-color: #e6c200;
-    }
-
-    .scroll-prompt {
-      margin-top: 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .arrow {
-      font-size: 2em;
-      color: #FFD700;
-      animation: bounce 2s infinite;
-    }
-
-    .description {
-      margin-top: 20px;
-      color: #f0e68c;
-      font-size: 1.2em;
-      padding: 0 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .install-button {
-      background-color: #FFD700;
-      color: #000000;
-      border: none;
-      padding: 10px 10px;
-      font-size: 1.2em;
-      border-radius: 15px;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s, transform 0.3s;
-      margin-top: 20px;
-    }
-
-    .install-button:hover {
-      background-color: #FFC107;
-      transform: translateY(-2px);
-    }
-
-    .install-button:active {
-      background-color: #FFB300;
-      transform: translateY(0);
-    }
-
-    .install-button:focus {
-      outline: none;
-      box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.5);
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-10px);
-      }
-      60% {
-        transform: translateY(-5px);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .headline {
-        font-size: 1.5em;
-      }
-
-      .enter-button {
-        font-size: 1em;
-        padding: 10px 20px;
-      }
-
-      .description {
-        font-size: 1em;
-      }
-    }
-
-    .entry-footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-links li {
-      display: inline;
-      margin: 0 10px;
-    }
-
-    .footer-links a {
-      color: #FFD700;
-      text-decoration: none;
-      font-size: 0.9em;
-    }
-
-    .footer-links a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        /* Media Query for mobile devices */
+        @media only screen and (max-width: 600px) {
+            .pictures img {
+                width: 500px; /* Reduced width for mobile */
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="entry-page">
-    <header class="entry-header">
-      <img src="logo.png" alt="Academic Pal Logo" class="logo">
-      <h1 class="headline">Welcome to Academic Pal</h1>
+    <header>
+        <div id="logos">
+           
+            <img src="university_logo.png" alt="University Logo">
+        </div>
+        <div class="container">
+            <h2>Academic Pal Login</h2>
+            <form id="login-form" onsubmit="return validateForm()">
+                <input type="text" id="name" name="name" placeholder="Name" required><br>
+                <input type="text" id="usn" name="usn" placeholder="USN (NNM23/NNM24 followed by alphabets and numbers)" required><br>
+                <button type="submit" id="login-btn">Login</button>
+            </form>
+        </div>
     </header>
-    <main class="entry-main">
-      <button id="installBtn" class="install-button" style="display: none;">Install Academic Pal</button>
-      <button class="enter-button">Enter</button>
-      <div class="scroll-prompt">
-        <span class="arrow">↓</span>
-      </div>
-      <p class="description">
-        Empowering students to reach their full potential with comprehensive resources and support.
-      </p>
-    </main>
-    <footer class="entry-footer">
-      <ul class="footer-links">
-        <li><a href="https://hari-hara7.github.io/new-academic-pal/#about">About Us</a></li>
-        <li><a href="https://academicpal.vercel.app/#contact">Contact</a></li>
-        <li><a href="https://www.privacypolicies.com/live/0b697d9c-92ec-451c-8619-68f264fabd20">Privacy Policy</a></li>
-      </ul>
-    </footer>
-  </div>
-  <script>
-    document.querySelector('.enter-button').addEventListener('click', () => {
-      window.location.href = 'https://hari-hara7.github.io/pop-page/';
-    });
 
-    let deferredPrompt;
-    const installBtn = document.getElementById('installBtn');
+    <div id="popup">
+        <img src="university_logo.png" alt="Academic Pal Logo">
+        <p id="popup-message"></p>
+    </div>
 
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      installBtn.style.display = 'block';
+    <div class="pictures">
+       
+        <img src="picture3.png" alt="Academic Pal Picture 3">
+    </div>
 
-      installBtn.addEventListener('click', () => {
-        installBtn.style.display = 'none';
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the install prompt');
-          } else {
-            console.log('User dismissed the install prompt');
-          }
-          deferredPrompt = null;
-        });
-      });
-    });
+    <script>
+        /* JavaScript code as before */
+        function validateForm() {
+            var usnPattern = /^(NNM23|NNM24)[a-zA-Z]{2}\d{3}$/;
+            var usnInput = document.getElementById("usn").value;
+            if (!usnPattern.test(usnInput)) {
+                alert("Please enter a valid USN ");
+                return false;
+            } else {
+                showPopup();
+                return false;
+            }
+        }
 
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js').then(registration => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        }).catch(error => {
-          console.error('Service Worker registration failed:', error);
-        });
-      });
-    }
-  </script>
+        function showPopup() {
+            var name = document.getElementById("name").value;
+            var usn = document.getElementById("usn").value;
+            var popupMessage = document.getElementById("popup-message");
+            popupMessage.textContent = "Welcome, " + name + "! Your USN is: " + usn;
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+            setTimeout(function() {
+                popup.style.display = "none";
+            }, 3000); // Adjust the timeout as needed
+
+            // Redirect after showing the popup (in this case, redirecting to academicpal.vercel.app)
+            setTimeout(function() {
+                window.location.href = "https://academicpal.vercel.app";
+            }, 3500);
+        }
+    </script>
 </body>
 </html>
