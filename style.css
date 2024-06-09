@@ -123,31 +123,36 @@ button:hover {
 
 
 
-.container {
+/* Add this CSS to style.css or inside a <style> tag in the HTML head */
+.download-button-container {
     text-align: center;
+    margin-top: 20px;
 }
 
-.install-button {
-    background-color: #000000;
-    color: #ffffff;
+.download-button {
+    background-color: #FFD700; /* Yellow color for the button */
+    color: #2c2c2c; /* Black color for the text */
     border: none;
     padding: 15px 30px;
     font-size: 1.2em;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    display: block;
-    margin: 20px auto; /* Center the button */
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-@media (max-width: 768px) {
-    .install-button {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
+.download-button:hover {
+    background-color: #FFC107; /* Slightly darker yellow for hover effect */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
+.download-button:active {
+    background-color: #FFB300; /* Even darker yellow for active state */
+    transform: translateY(0); /* Reset lift effect */
+}
+
+.download-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.5); /* Yellow focus ring */
+}
