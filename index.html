@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Pal Login</title>
+    <link rel="stylesheet" href="style.css"> 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
     crossorigin="anonymous"></script>
 <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon"  style="filter: grayscale(100%);">
@@ -23,130 +24,7 @@
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
     crossorigin="anonymous"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #000;
-        }
-        header {
-            text-align: center;
-            padding: 20px 0;
-        }
-        #logos {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        #logos img {
-            width: 150px;
-            margin: 0 10px;
-        }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            background-color: #fff;
-            text-align: center;
-        }
-        input[type="text"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        button {
-            width: calc(100% - 22px);
-            padding: 10px;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #333;
-        }
-        #popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            background-color: #fff;
-            z-index: 999;
-        }
-        #popup img {
-            width: 100px;
-            margin-bottom: 10px;
-        }
-
-        #popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            background-color: #ffffff; /* Change background color */
-            color: #000000; /* Change text color */
-            text-align: center;
-            z-index: 999;
-        }
-        #popup img {
-            width: 300px;
-            margin: 0 auto; /* Center the image */
-            display: block; /* Ensure image is displayed as block element */
-            filter: invert(1); /* Invert logo colors */
-        }
-        #popup-message {
-            margin-top: 20px;
-        }
-        .pictures {
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        .pictures img {
-            width: 150px;
-            margin: 0 10px;
-        }
-
-        #logos img {
-            width: 300px;
-            margin: 0 10px;
-            filter: invert(1); /* Invert logo colors */
-        }
-
-        .pictures {
-            display: flex;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        .pictures img {
-            width: 500px;
-            height: 300px; /* Increased width for desktop */
-            margin: 0 10px;
-        }
-
-        /* Media Query for mobile devices */
-        @media only screen and (max-width: 600px) {
-            .pictures img {
-                width: 500px; /* Reduced width for mobile */
-            }
-        }
-    </style>
+    
 </head>
 <body>
     <header>
@@ -173,37 +51,7 @@
        
         <img src="picture3.png" alt="Academic Pal Picture 3">
     </div>
-
-    <script>
-        /* JavaScript code as before */
-        function validateForm() {
-            var usnPattern = /^(NNM23|NNM24)[a-zA-Z]{2}\d{3}$/;
-            var usnInput = document.getElementById("usn").value;
-            if (!usnPattern.test(usnInput)) {
-                alert("Please enter a valid USN ");
-                return false;
-            } else {
-                showPopup();
-                return false;
-            }
-        }
-
-        function showPopup() {
-            var name = document.getElementById("name").value;
-            var usn = document.getElementById("usn").value;
-            var popupMessage = document.getElementById("popup-message");
-            popupMessage.textContent = "Welcome, " + name + "! Your USN is: " + usn;
-            var popup = document.getElementById("popup");
-            popup.style.display = "block";
-            setTimeout(function() {
-                popup.style.display = "none";
-            }, 3000); // Adjust the timeout as needed
-
-            // Redirect after showing the popup (in this case, redirecting to academicpal.vercel.app)
-            setTimeout(function() {
-                window.location.href = "https://academicpal.vercel.app";
-            }, 3500);
-        }
-    </script>
+    <script src="script.js"></script>
+  
 </body>
 </html>
