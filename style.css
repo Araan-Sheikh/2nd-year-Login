@@ -121,10 +121,13 @@ button:hover {
     }
 }
 
+.container {
+    text-align: center;
+}
 
 .install-button {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #FFD700;
+    color: #000000;
     border: none;
     padding: 15px 30px;
     font-size: 1.2em;

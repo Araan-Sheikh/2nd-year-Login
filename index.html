@@ -4,36 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Pal Login</title>
-    <link rel="stylesheet" href="style.css"> 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-    crossorigin="anonymous"></script>
-<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon"  style="filter: grayscale(100%);">
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
-
- gtag('config', 'G-6YYNZVB1W1');
-</script>
-<!-- End of Google tag -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-    crossorigin="anonymous"></script>
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-    crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon" style="filter: grayscale(100%);">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YYNZVB1W1');
+    </script>
 </head>
 <body>
     <header>
         <div id="logos">
-           
             <img src="university_logo.png" alt="University Logo">
         </div>
         <div class="container">
-            
             <h2>Academic Pal Login</h2>
             <form id="login-form" onsubmit="return validateForm()">
                 <input type="text" id="name" name="name" placeholder="Name" required><br>
@@ -42,20 +29,50 @@
             </form>
         </div>
     </header>
-  
+
     <div id="popup">
         <img src="university_logo.png" alt="Academic Pal Logo">
         <p id="popup-message"></p>
     </div>
-    <button id="installBtn" class="install-button" style="display: none;">Install Academic Pal</button>
+
     <div class="pictures">
-       
         <img src="picture3.png" alt="Academic Pal Picture 3">
     </div>
 
+    <button id="installBtn" class="install-button" style="display: none;">Install Academic Pal</button>
 
-   
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        }
+
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block';
+
+            installBtn.addEventListener('click', () => {
+                installBtn.style.display = 'none';
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+        });
+    </script>
     <script src="script.js"></script>
-  
 </body>
 </html>
