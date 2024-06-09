@@ -5,42 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Pal Login</title>
     <link rel="stylesheet" href="style.css"> 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-    crossorigin="anonymous"></script>
-    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon"  style="filter: grayscale(100%);">
-
-    <!-- Google tag (gtag.js) -->
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon" style="filter: grayscale(100%);">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
     <script>
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
-
      gtag('config', 'G-6YYNZVB1W1');
     </script>
-    <!-- End of Google tag -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646"
-        crossorigin="anonymous"></script>
-        
 </head>
 <body>
     <header>
         <div id="logos">
             <img src="university_logo.png" alt="University Logo">
         </div>
-       
         <div class="container">
-         
             <div class="download-button-container">
                 <a href="Academic Pal .apk" class="download-button" download>Download Academic Pal App</a>
             </div>
             <h2>Academic Pal Login</h2>
-
             <form id="login-form" onsubmit="return validateForm()">
                 <input type="text" id="name" name="name" placeholder="Name" required><br>
                 <input type="text" id="usn" name="usn" placeholder="USN (NNM23/NNM24 followed by alphabets and numbers)" required><br>
                 <button type="submit" id="login-btn">Login</button>
             </form>
+            <div id="clerk-app"></div>
         </div>
     </header>
 
@@ -52,10 +42,21 @@
     <div class="pictures">
         <img src="picture3.png" alt="Academic Pal Picture 3">
     </div>
+<script src="script.js"></script>
+    <script async src="https://evident-ray-43.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous" data-clerk-publishable-key="pk_test_ZXZpZGVudC1yYXktNDMuY2xlcmsuYWNjb3VudHMuZGV2JA"></script>
+    <script>
+        window.addEventListener("load", async function () {
+            await Clerk.load();
+            if (Clerk.user) {
+                document.getElementById("clerk-app").innerHTML = `<div id="user-button"></div>`;
+                Clerk.mountUserButton(document.getElementById("user-button"));
+            } else {
+                document.getElementById("clerk-app").innerHTML = `<div id="sign-in"></div>`;
+                Clerk.mountSignIn(document.getElementById("sign-in"));
+            }
+        });
 
-   
-
-    <script src="script.js"></script>
-  
+        
+    </script>
 </body>
 </html>

@@ -5,9 +5,128 @@ body {
     background-color: #fff;
     color: #000;
 }
+
 header {
     text-align: center;
     padding: 20px 0;
+}
+
+#logos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#logos img {
+    width: 150px;
+    margin: 0 10px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: calc(100% - 22px);
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 999;
+    text-align: center;
+}
+
+#popup img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+#popup-message {
+    margin-top: 20px;
+}
+
+.pictures {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.pictures img {
+    width: 150px;
+    margin: 0 10px;
+}
+
+.download-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.download-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.download-button:active {
+    background-color: #666;
+    transform: translateY(0);
+}
+
+.download-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .pictures img {
+        width: 100%;
+    }
 }
 #logos {
     display: flex;
