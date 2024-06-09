@@ -6,11 +6,9 @@ self.addEventListener('install', (event) => {
         '/index.html',
         '/style.css',
         '/script.js',
-        '/picture1.png',
-        '/picture2.png',
-        '/picture3.png',
-        '/university_logo.png',
-     
+        '/manifest.json',
+        '/icon-192x192.png',
+        '/icon-512x512.png'
       ]);
     })
   );
