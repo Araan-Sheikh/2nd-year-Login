@@ -130,10 +130,10 @@ button:hover {
 }
 
 .download-button {
-    background-color: #FFD700; /* Yellow color for the button */
-    color: #2c2c2c; /* Black color for the text */
+    background-color: #000000; /* Yellow color for the button */
+    color: #ffffff; /* Black color for the text */
     border: none;
-    padding: 15px 30px;
+    padding: 10px 10px;
     font-size: 1.2em;
     border-radius: 10px;
     cursor: pointer;
@@ -143,16 +143,16 @@ button:hover {
 }
 
 .download-button:hover {
-    background-color: #FFC107; /* Slightly darker yellow for hover effect */
+    background-color: #000000; /* Slightly darker yellow for hover effect */
     transform: translateY(-2px); /* Slight lift effect */
 }
 
 .download-button:active {
-    background-color: #FFB300; /* Even darker yellow for active state */
+    background-color: #000000; /* Even darker yellow for active state */
     transform: translateY(0); /* Reset lift effect */
 }
 
 .download-button:focus {
     outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.5); /* Yellow focus ring */
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.5); /* Yellow focus ring */
 }
