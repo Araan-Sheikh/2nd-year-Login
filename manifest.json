@@ -1,10 +1,11 @@
 {
   "name": "Academic Pal",
-  "short_name": "AcademicPal",
+  "short_name": "Academic Pal",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
+  "description": "An educational platform for college students.",
   "icons": [
     {
       "src": "icon-192x192.png",
