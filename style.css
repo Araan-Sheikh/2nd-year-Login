@@ -125,26 +125,3 @@ button:hover {
     text-align: center;
 }
 
-.install-button {
-    background-color: #FFD700;
-    color: #000000;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    display: block;
-    margin: 20px auto; /* Center the button */
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-@media (max-width: 768px) {
-    .install-button {
-        font-size: 1em;
-        padding: 10px 20px;
-    }
-}
