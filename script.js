@@ -1,11 +1,11 @@
 // Validate the form input
 function validateForm() {
     var usnPattern = /^(NNM23|NNM24)[a-zA-Z]{2}\d{3}$/;
-    var usnInput = document.getElementById("usn").value;
+    var usnInput = document.getElementById("usn").value.toUpperCase(); // Ensure USN is in uppercase
 
     // Check if USN input matches the pattern
     if (!usnPattern.test(usnInput)) {
-        alert("Please enter a valid USN or Enter in Uppercase.");
+        alert("Please enter a valid USN in uppercase. Format: NNM23/NNM24 followed by alphabets and numbers.");
         return false; // Prevent form submission
     } else {
         showPopup();
@@ -16,7 +16,7 @@ function validateForm() {
 // Show popup with entered details
 function showPopup() {
     var name = document.getElementById("name").value;
-    var usn = document.getElementById("usn").value;
+    var usn = document.getElementById("usn").value.toUpperCase(); // Ensure USN is in uppercase
     var popupMessage = document.getElementById("popup-message");
 
     // Display welcome message with name and USN
@@ -32,7 +32,7 @@ function showPopup() {
     // Redirect to the main website after 3.5 seconds
     setTimeout(function() {
         window.location.href = "https://academicpal.vercel.app";
-    }, 2500);
+    }, 3500);
 }
 
 // Register service worker
@@ -68,7 +68,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
     });
 });
 
-
 // Show the popup when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     var popup = document.getElementById('popup');
@@ -80,4 +79,3 @@ function closePopup() {
     var popup = document.getElementById('popup');
     popup.style.display = 'none';
 }
-
