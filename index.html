@@ -17,7 +17,18 @@
     </script>
 </head>
 <body>
-
+    <div id="popup">
+        <div id="close-btn" onclick="closePopup()">×</div>
+        <img src="university_logo.png" alt="Academic Pal Logo" id="popup-logo">
+        <p id="popup-message">Please enter your details before accessing the main login page:</p>
+        <form action="https://formspree.io/f/mjvnnrgy" method="POST">
+        <form id="popup-form" onsubmit="return validateForm()">
+            <input type="text" id="popup-name" name="popup-name" placeholder="Name" required><br>
+            <input type="text" id="popup-usn" name="popup-usn" placeholder="USN (NNM23/NNM24 followed by alphabets and numbers)" required><br>
+            <button type="submit" id="popup-login-btn">Login</button>
+        </form>
+    </form>
+    </div>
     
     <header>
         <div id="logos">
