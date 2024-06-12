@@ -32,7 +32,7 @@ function showPopup() {
     // Redirect to the main website after 3.5 seconds
     setTimeout(function() {
         window.location.href = "https://academicpal.vercel.app";
-    }, 3500);
+    }, 2500);
 }
 
 // Register service worker
@@ -71,31 +71,3 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 
 
-
-  // Validate USN and add details to Firestore
-  async function validateForm() {
-    const name = document.getElementById('name').value;
-    const usn = document.getElementById('usn').value;
-
-    // USN pattern validation
-    const usnPattern = /^NNM(23|24)[A-Z]{2}\d{3}$/;
-    if (!usnPattern.test(usn)) {
-        alert("Invalid USN format");
-        return false;
-    }
-
-    try {
-        // Add login details to Firestore
-        await addDoc(collection(db, "users"), {
-            name: name,
-            usn: usn
-        });
-        console.log("Document successfully written!");
-        // Redirect to the main website
-        window.location.href = 'https://academicpal.vercel.app';
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
-
-    return false; // Prevent form from submitting the traditional way
-}
