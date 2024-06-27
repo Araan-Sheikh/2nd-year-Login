@@ -67,15 +67,3 @@ window.addEventListener('beforeinstallprompt', (e) => {
         });
     });
 });
-
-// Show the popup when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    var popup = document.getElementById('popup');
-    popup.style.display = 'block';
-});
-
-// Close the popup
-function closePopup() {
-    var popup = document.getElementById('popup');
-    popup.style.display = 'none';
-}
