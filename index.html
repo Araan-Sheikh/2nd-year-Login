@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Pal Login</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon" style="filter: grayscale(100%);">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
-   
     <script>
      window.dataLayer = window.dataLayer || [];
      function gtag(){dataLayer.push(arguments);}
@@ -17,8 +16,6 @@
     </script>
 </head>
 <body>
-   
-    
     <header>
         <div id="logos">
             <img src="university_logo.png" alt="University Logo">
@@ -45,7 +42,28 @@
     <div class="pictures">
         <img src="picture3.png" alt="Academic Pal Picture 3">
     </div>
-<script src="script.js"></script>
+
+    <!-- Chat system elements -->
+    <div class="chat-icon" id="chat-icon">
+        💬
+    </div>
+    <div class="chat-box" id="chat-box">
+        <div class="chat-header">
+            <h2>Chat</h2>
+            <button id="close-chat">X</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <p>Academic Pal </p>
+    
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type a message...">
+            <button id="send-message">Send</button>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
     <script async src="https://evident-ray-43.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous" data-clerk-publishable-key="pk_test_ZXZpZGVudC1yYXktNDMuY2xlcmsuYWNjb3VudHMuZGV2JA"></script>
     <script>
         window.addEventListener("load", async function () {
@@ -58,11 +76,6 @@
                 Clerk.mountSignIn(document.getElementById("sign-in"));
             }
         });
-
-        
     </script>
-   
-
-
 </body>
 </html>
