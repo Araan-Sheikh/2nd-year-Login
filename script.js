@@ -20,7 +20,8 @@ function showPopup() {
     var popupMessage = document.getElementById("popup-message");
 
     // Display welcome message with name and USN
-    popupMessage.textContent = `Welcome, ${name}! We're excited to have you at Academic Pal. Your USN is: ${usn}. Feel free to explore and make the most of our resources!`
+    popupMessage.textContent = `Welcome, ${name}! We're glad to have you here. Your USN is: ${usn}.`
+
 
     var popup = document.getElementById("popup");
     popup.style.display = "block";
