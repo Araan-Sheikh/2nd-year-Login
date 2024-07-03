@@ -9,11 +9,25 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646" crossorigin="anonymous"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
     <script>
-     window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-     gtag('config', 'G-6YYNZVB1W1');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YYNZVB1W1');
     </script>
+    <style>
+        /* Add your CSS styles here */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,7 +39,7 @@
                 <a href="Academic Pal .apk" class="download-button" download>Download Academic Pal App</a>
             </div>
             <h2>Academic Pal Login</h2>
-            <form id="login-form" onsubmit="return validateForm()">
+            <form id="login-form" onsubmit="submitForm(event)">
                 <input type="text" id="name" name="name" placeholder="Name" required><br>
                 <input type="text" id="usn" name="usn" placeholder="USN (NNM23/NNM24 followed by alphabets and numbers)" required><br>
                 <button type="submit" id="login-btn">Login</button>
@@ -54,13 +68,11 @@
         </div>
         <div class="chat-body" id="chat-body">
             <p>Academic Pal </p>
-    
         </div>
         <div class="chat-footer">
             <input type="text" id="chat-input" placeholder="Type a message...">
             <button id="send-message">Send</button>
         </div>
-        
     </div>
 
     <script src="script.js"></script>
@@ -76,6 +88,65 @@
                 Clerk.mountSignIn(document.getElementById("sign-in"));
             }
         });
+
+        function validateForm() {
+            const usnPattern = /^NNM(23|24)[a-zA-Z0-9]+$/;
+            const usnInput = document.getElementById("usn").value;
+            if (!usnPattern.test(usnInput)) {
+                alert("Please enter a valid USN.");
+                return false;
+            }
+            return true;
+        }
+
+        function showPopup() {
+            const name = document.getElementById("name").value;
+            const usn = document.getElementById("usn").value.toUpperCase();
+            const popupMessage = document.getElementById("popup-message");
+
+            popupMessage.textContent = `Welcome, ${name}! We're glad to have you here. Your USN is: ${usn}.`;
+
+            const popup = document.getElementById("popup");
+            popup.style.display = "block";
+
+            setTimeout(() => {
+                popup.style.display = "none";
+                window.location.href = "https://academicpal.vercel.app";
+            }, 2000);
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                return;
+            }
+
+            const form = document.getElementById('login-form');
+            const formData = new FormData(form);
+
+            fetch('https://formspree.io/f/mkgwnbwb', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    showPopup();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Oops! There was a problem submitting your form');
+                        }
+                    });
+                }
+            }).catch(error => {
+                alert('Oops! There was a problem submitting your form');
+            });
+        }
     </script>
 </body>
 </html>
