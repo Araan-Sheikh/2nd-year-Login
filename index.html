@@ -32,10 +32,12 @@
 <body>
     <header>
         <div id="logos">
+          
             <img src="university_logo.png" alt="University Logo">
         </div>
         <div class="container">
             <div class="download-button-container">
+               
                 <a href="Academic Pal .apk" class="download-button" download>Download Academic Pal App</a>
             </div>
             <h2>Academic Pal Login</h2>
@@ -43,8 +45,10 @@
                 <input type="text" id="name" name="name" placeholder="Name" required><br>
                 <input type="text" id="usn" name="usn" placeholder="USN (NNM23/NNM24 followed by alphabets and numbers)" required><br>
                 <button type="submit" id="login-btn">Login</button>
+                <button id="first-year-btn">First Year Students Click Here</button>
             </form>
             <div id="clerk-app"></div>
+         
         </div>
     </header>
 
@@ -78,6 +82,18 @@
     <script src="script.js"></script>
     <script async src="https://evident-ray-43.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous" data-clerk-publishable-key="pk_test_ZXZpZGVudC1yYXktNDMuY2xlcmsuYWNjb3VudHMuZGV2JA"></script>
     <script>
+
+
+
+
+document.getElementById('first-year-btn').addEventListener('click', function() {
+            window.location.href = 'https://hari-hara7.github.io/Academic-pal-entry-page-2-/';
+        });
+
+
+
+
+
         window.addEventListener("load", async function () {
             await Clerk.load();
             if (Clerk.user) {
@@ -125,7 +141,7 @@
             const form = document.getElementById('login-form');
             const formData = new FormData(form);
 
-            fetch('https://formspree.io/f/mkgwnbwb', {
+            fetch('https://getform.io/f/bmdppoza', {
                 method: 'POST',
                 body: formData,
                 headers: {
