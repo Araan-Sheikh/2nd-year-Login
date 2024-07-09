@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle chat input based on the user's selection
     function handleChatInput(input) {
         if (input.toLowerCase().includes('login')) {
-            chatBody.innerHTML += `<p>Do you have Doudt on   <button id="login-name">Name</button> or <button id="login-usn">USN</button>?</p>`;
+            chatBody.innerHTML += `<p>Do you have Doubt on   <button id="login-name">Name</button> or <button id="login-usn">USN</button>?</p>`;
             document.getElementById('login-name').addEventListener('click', () => {
                 appendMessage('System', 'Please enter a proper name.');
             });
@@ -142,6 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initial welcome message
-    appendMessage('System', 'Welcome to Academic Pal 2.0! Have any doubts about login?');
+    appendMessage('System', 'Welcome to Academic Pal! Have any doubts about login?');
     appendMessage('System', 'You can type "Login" or "Sign In" to proceed.');
 });
