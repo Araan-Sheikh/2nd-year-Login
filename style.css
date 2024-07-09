@@ -439,3 +439,14 @@ button:hover {
         padding: 5px 10px;
     }
 }
+
+/* Base styles for the buttons */
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    #login-btn,
+    #first-year-btn {
+        height: 40px; /* Increase the height */
+    }
+}
+
