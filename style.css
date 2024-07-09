@@ -491,13 +491,13 @@ p {
 /* Responsive styles */
 @media (max-width: 600px) {
     p {
-        font-size: 18px; /* Increase the font size on mobile screens */
+        font-size: 24px; /* Increase the font size on mobile screens */
     }
 }
 
 @media (min-width: 601px) and (max-width: 1200px) {
     p {
-        font-size: 20px; /* Adjust font size for tablets or medium screens */
+        font-size: 24px; /* Adjust font size for tablets or medium screens */
     }
 }
 
