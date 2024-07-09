@@ -479,3 +479,30 @@ button:hover {
     font-weight: 400;
     font-style: normal;
   }
+
+
+  /* Base styles for the paragraph */
+p {
+    font-size: 20px; /* Default font size */
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    p {
+        font-size: 18px; /* Increase the font size on mobile screens */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    p {
+        font-size: 20px; /* Adjust font size for tablets or medium screens */
+    }
+}
+
+@media (min-width: 1201px) {
+    p {
+        font-size: 22px; /* Adjust font size for large screens */
+    }
+}
