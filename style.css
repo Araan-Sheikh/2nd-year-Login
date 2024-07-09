@@ -464,8 +464,8 @@ button:hover {
   }
   
 
-  .neuton-regular-italic {
+  .neuton-regular {
     font-family: "Neuton", serif;
     font-weight: 400;
-    font-style: italic;
+    font-style: normal;
   }
