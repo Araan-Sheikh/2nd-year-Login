@@ -17,7 +17,7 @@ header {
     margin-bottom: 20px;
 }
 
-#logos img {
+#logo img {
     width: 150px;
     margin: 0 10px;
 }
@@ -122,6 +122,8 @@ button:hover {
     box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
+
+
 /* Media Query for mobile devices */
 @media only screen and (max-width: 600px) {
     .pictures img {
@@ -222,6 +224,11 @@ button:hover {
     margin: 0 10px;
     filter: invert(1); /* Invert logo colors */
 }
+#logo img {
+    width: 300px;
+    margin: 0 10px;
+    filter: invert(1); /* Invert logo colors */
+}
 
 .pictures {
     display: flex;
@@ -241,6 +248,40 @@ button:hover {
     }
 }
 
+
+.russo-one-regular {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+/* CSS for the tagline */
+.tagline {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.tagline h1 {
+    font-size: 1.7em;
+   
+    color: #333; /* Adjust the color as needed */
+    margin: 0;
+}
+
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.tagline p {
+    font-size: 1.2em;
+    font-family: 'Neuton', serif;
+    color: #666; /* Adjust the color as needed */
+    margin: 5px 0 0 0;
+}
 
 
 /* Add this CSS to style.css or inside a <style> tag in the HTML head */
