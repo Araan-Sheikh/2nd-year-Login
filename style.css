@@ -270,7 +270,7 @@ button:hover {
 }
 @media (max-width: 768px) {
     .tagline h1 {
-        font-size: 1.6em; /* Adjust font size for smaller screens */
+        font-size: 1.7em; /* Adjust font size for smaller screens */
     }
 }
 
