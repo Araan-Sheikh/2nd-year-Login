@@ -63,7 +63,7 @@
                 <button type="submit" id="login-btn" class="russo-one-regular">Login</button>
                 <button id="first-year-btn" class="russo-one-regular">First Year Students Click Here</button>
             </form>
-            <div id="clerk-app"></div>
+           
         </div>
     </header>
     
@@ -109,16 +109,7 @@ document.getElementById('first-year-btn').addEventListener('click', function() {
 
 
 
-        window.addEventListener("load", async function () {
-            await Clerk.load();
-            if (Clerk.user) {
-                document.getElementById("clerk-app").innerHTML = `<div id="user-button"></div>`;
-                Clerk.mountUserButton(document.getElementById("user-button"));
-            } else {
-                document.getElementById("clerk-app").innerHTML = `<div id="sign-in"></div>`;
-                Clerk.mountSignIn(document.getElementById("sign-in"));
-            }
-        });
+       
 
         function validateForm() {
             const usnPattern = /^NNM(23|24)[a-zA-Z0-9]+$/;
