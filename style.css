@@ -13,6 +13,18 @@ header {
     padding: 20px 0;
 }
 
+
+
+.cinzel-unique {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+  
+  
+
 #logos {
     display: flex;
     justify-content: center;
