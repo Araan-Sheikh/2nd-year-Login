@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('Designer - 2024-07-14T092722.501.jpeg') no-repeat center center fixed;
+    background: url('5234064.jpg') no-repeat center center fixed;
+    
     background-size: cover; /* Cover ensures the image covers the entire background */
     background-attachment: fixed; /* Keeps the background fixed as the user scrolls */
     color: #000;
