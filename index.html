@@ -184,7 +184,16 @@
                             if (response.ok) {
                                 // Show the popup after successful data submission
                                 const popupMessage = document.getElementById("popup-message");
-                                popupMessage.innerHTML = `Welcome, ${name}!<br>Your USN is: ${usn}<br>Your Year: ${yearText}<br>Your Branch: ${branchText}.`;
+                                popupMessage.innerHTML = `
+    Welcome, ${name}!<br>
+    Your login was successful.<br>
+    Your USN is: ${usn}<br>
+    Your Year: ${yearText}<br>
+    Your Branch: ${branchText}.<br>
+    We're excited to have you on board!
+`;
+
+``;
                                 const popup = document.getElementById("popup");
                                 popup.style.display = "block";
         
