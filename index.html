@@ -79,6 +79,24 @@
             padding: 10px;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
+
+        @media (max-width: 480px) {
+    /* For mobile devices */
+    #popup {
+        width: 95%; /* Almost full width on mobile */
+        padding: 10px; /* Reduce padding on mobile */
+    }
+
+    .install-button, .student-button {
+        font-size: 14px; /* Further reduce button font size */
+        padding: 10px 0px; /* Adjust padding for better layout */
+        width: 100%; /* Buttons will stack and take full width */
+    }
+
+    .install-button i, .student-button i {
+        margin-right: 4px; /* Reduce space between icon and text */
+    }
+}
     </style>
 </head>
 <body>
