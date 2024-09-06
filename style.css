@@ -1,532 +1,168 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('5234064.jpg') no-repeat center center fixed;
-    
-    background-size: cover; /* Cover ensures the image covers the entire background */
-    background-attachment: fixed; /* Keeps the background fixed as the user scrolls */
-    color: #000;
-}
 
-header {
-    text-align: center;
-    padding: 20px 0;
-}
-
-
-
-.cinzel-unique {
-  font-family: "Cinzel", serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
-  
-  
-
-#logos {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-#logo img {
-    width: 150px;
-    margin: 0 10px;
-}
-
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-color: #fff;
-    text-align: center;
-}
-
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-button {
-    width: calc(100% - 22px);
-    padding: 10px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #333;
-}
-
-#popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-color: #fff;
-    z-index: 999;
-    text-align: center;
-}
-
-#popup img {
-    width: 100px;
-    margin-bottom: 10px;
-}
-
-#popup-message {
-    margin-top: 20px;
-}
-
-.pictures {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.pictures img {
-    width: 150px;
-    margin: 0 10px;
-}
-
-.download-button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.download-button {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 10px 10px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.download-button:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-}
-
-.download-button:active {
-    background-color: #666;
-    transform: translateY(0);
-}
-
-.download-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.5);
-}
-
-
-
-/* Media Query for mobile devices */
-@media only screen and (max-width: 600px) {
-    .pictures img {
-        width: 100%;
-    }
-}
-#logos {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-#logos img {
-    width: 150px;
-    margin: 0 10px;
-}
-.container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-color: #fff;
-    text-align: center;
-}
-input[type="text"] {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-button {
-    width: calc(100% - 22px);
-    padding: 15px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #333;
-}
-#popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-color: #fff;
-    z-index: 999;
-}
-#popup img {
-    width: 100px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-#popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-color: #ffffff; /* Change background color */
-    color: #000000; /* Change text color */
-    text-align: center;
-    z-index: 999;
-}
-#popup img {
-    width: 300px;
-    margin: 0 auto; /* Center the image */
-    display: block; /* Ensure image is displayed as block element */
-    filter: invert(1); /* Invert logo colors */
-}
-#popup-message {
-    margin-top: 20px;
-}
-.pictures {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-.pictures img {
-    width: 150px;
-    margin: 0 10px;
-}
-
-#logos img {
-    width: 300px;
-    margin: 0 10px;
-    filter: invert(1); /* Invert logo colors */
-}
-#logo img {
-    width: 300px;
-    margin: 0 10px;
-    filter: invert(1); /* Invert logo colors */
-}
-
-.pictures {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-.pictures img {
-    width: 500px;
-    height: 300px; /* Increased width for desktop */
-    margin: 0 10px;
-}
-
-/* Media Query for mobile devices */
-@media only screen and (max-width: 600px) {
-    .pictures img {
-        width: 500px; /* Reduced width for mobile */
-    }
-}
-
-
-.russo-one-regular {
-    font-family: "Russo One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-
-/* CSS for the tagline */
-.tagline {
-    text-align: center;
+.logo1 {
     margin: 20px 0;
 }
 
-.tagline h1 {
-    font-size: 1.7em;
-   
-    color: #333; /* Adjust the color as needed */
-    margin: 0;
+
+
+.shaped-logo {
+    max-width: 700px; /* Adjust size as needed */
+    height: 700px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    object-fit: cover;
 }
 @media (max-width: 768px) {
-    .tagline h1 {
-        font-size: 2.0em; /* Adjust font size for smaller screens */
+    .shaped-logo {
+        max-width: 100%; /* Adjust max-width for smaller screens */
     }
 }
-
-.bebas-neue-regular {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
+.orbitron-unique {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* Replace with your desired weight between 400 and 900 */
     font-style: normal;
   }
   
-.tagline p {
-    font-size: 1.2em;
-    font-family: 'Neuton', serif;
-    color: #666; /* Adjust the color as needed */
-    margin: 5px 0 0 0;
-}
 
-
-/* Add this CSS to style.css or inside a <style> tag in the HTML head */
-.download-button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.download-button {
-    background-color: #000000; /* Yellow color for the button */
-    color: #ffffff; /* Black color for the text */
-    border: none;
-    padding: 10px 10px;
-    font-size: 1.2em;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.download-button:hover {
-    background-color: #000000; /* Slightly darker yellow for hover effect */
-    transform: translateY(-2px); /* Slight lift effect */
-}
-
-.download-button:active {
-    background-color: #000000; /* Even darker yellow for active state */
-    transform: translateY(0); /* Reset lift effect */
-}
-
-.download-button:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.5); /* Yellow focus ring */
-}
-
-
-
-
-
-/* styles.css */
-
-/* Login container styles */
-.login-container {
-    width: 300px;
-    margin: 100px auto;
-    text-align: center;
-}
-
-/* Chat icon styles */
-.chat-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #000000;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.chat-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Chat box styles */
-.chat-box {
-    display: none;
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    width: 350px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-}
-
-.chat-header, .chat-footer {
-    padding: 15px;
-    background-color: #000000;
-    color: white;
-}
-
-.chat-header {
-    display: flex;
-    justify-content: space-between;
-   
- 
-}
-
-#close-chat {
-    background: none;
-    border: none;
-    font-size: 1.2em;
-    color: white;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    margin-right: 50px; /* Adjust margin for positioning */
-}
-
-#close-chat:hover {
-    transform: scale(1.2);
-    margin-right: 50px;
-}
-
-
-.chat-body {
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 15px;
-    background-color: #f9f9f9;
-}
-
-.chat-body p {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #e9e9e9;
-    border-radius: 5px;
-}
-
-.chat-body p strong {
-    color: #555;
-    font-size: 0.85em;
-}
-
-.chat-footer {
-    display: flex;
-    align-items: center;
-    background-color: #000000;
-}
-
-#chat-input {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-#send-message {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#send-message:hover {
-    background-color: #218838;
-}
-
-/* Button styles */
-button {
-    background-color: #000000;
-    color: white;
-    border: none;
-    padding: 7px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px 2px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #000000;
-}
-
-/* Chat system responsiveness */
-@media (max-width: 768px) {
-    .chat-box {
-        width: 90%;
-        right: 5%;
-        bottom: 10%;
-    }
-
-    .chat-icon {
-        padding: 10px;
-    }
-
-    #chat-input {
-        padding: 8px;
-    }
-
-    #send-message {
-        padding: 8px 12px;
-    }
-
-    button {
-        padding: 5px 10px;
-    }
-}
-
-/* Base styles for the buttons */
-
-/* Responsive styles */
-@media (max-width: 600px) {
-    #login-btn,
-    #first-year-btn {
-        height: 40px; /* Increase the height */
-    }
-}
-
-
-.bebas-neue-regular {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
+  .oswald-unique {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; /* Replace with your desired weight between 200 and 700 */
     font-style: normal;
   }
   
 
 
-
-
-.anton-sc-regular {
+  .anton-sc-regular {
     font-family: "Anton SC", sans-serif;
     font-weight: 400;
     font-style: normal;
   }
   
+
+
+
+
+  .saira-condensed-regular {
+    font-family: "Saira Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+/* Section Styles */
+#notes {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+    text-align: center; /* Center align content */
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.section-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+    margin-top: 30px;
+}
+
+/* Card Styles */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #110e0e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust card width as needed */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+
+.pt-sans-narrow-regular {
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+.card-content {
+    font-size: 16px;
+    color: #555;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-content p {
+    margin-bottom: 15px;
+}
+
+.card-content ul {
+    text-align: left;
+    margin-bottom: 15px;
+    padding-left: 0;
+}
+
+.card-content ul li {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
   .black-ops-one-regular {
     font-family: "Black Ops One", system-ui;
     font-weight: 400;
@@ -534,15 +170,3364 @@ button:hover {
   }
   
 
-  .neuton-regular {
-    font-family: "Neuton", serif;
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#warningMessage {
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    animation: fadeInOut 3s;
+    text-align: center;
+}
+
+.baskervville-sc-regular {
+    font-family: "Baskervville SC", serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.anton-sc-regular {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 900
+
+.bodoni-moda-sc-<uniquifier> {
+  font-family: "Bodoni Moda SC", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.academic-pal-card {
+    background-color: #fff;
+    border: 3px solid transparent;
+    border-image: linear-gradient(to right, yellow, red) 1;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    text-align: center;
+    margin: 20px auto; /* Centers the card horizontally */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.academic-pal-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+.academic-pal-card .logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+.academic-pal-card h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+.academic-pal-card p {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+}
+.academic-pal-card button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+.academic-pal-card button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Global styles */
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    background-color: #000000;
+    background-size: cover; /* This will ensure the image covers the entire background */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    background-attachment: fixed; /* This keeps the image fixed in place when scrolling */
+    padding: 20px;
+  }
+  
+  /* Section styles */
+  .features-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Card container styles */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next row on smaller screens */
+    justify-content: center;
+    gap: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap to each card */
+    padding-bottom: 20px;
+  }
+  
+  /* Card styles */
+  .card {
+    flex: 1 1 300px; /* Flexible width, minimum width 300px */
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .card-description {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column; /* Stack cards vertically on smaller screens */
+      align-items: center;
+    }
+
+  }
+  
+  
+
+
+
+
+.thank-you-message img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.hero img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.three-d-section {
+    width: 340px;  /* Adjust width as needed */
+    margin: 0 auto;  /* Center the section horizontally */
+    border: 1px solid #ddd;  /* Add a border */
+    padding: 10px;  /* Add some padding */
+  }
+
+  #warningMessage {
+    display: none;
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    animation: fadeInOut 3s;
+    text-align: center;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Define styles for smaller screens */
+@media only screen and (max-width: 600px) {
+  .modal-content pre {
+    font-size: 09px; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height as needed */
+    margin: 0; /* Remove any default margins */
+  }
+}
+
+.modal-content button {
+    background-color: rgb(0, 0, 0); /* Transparent background */
+    color: rgb(255, 255, 255); /* White text */
+    padding: 10px 20px; /* Padding */
+    border: 2px solid transparent; /* Transparent border */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    margin-top: 10px; /* Top margin */
+    animation: rainbowGlow 2s linear infinite; /* Apply animation */
+}
+
+/* Keyframes for rainbow glow animation */
+@keyframes rainbowGlow {
+    0% { border-color: red; }
+    16.666% { border-color: orange; }
+    33.333% { border-color: yellow; }
+    50% { border-color: green; }
+    66.666% { border-color: blue; }
+    83.333% { border-color: indigo; }
+    100% { border-color: violet; }
+}
+
+/* Style for the close button (×) */
+.close {
+    color: #ffffff; /* Grey text */
+    float: right; /* Align to the right */
+    font-size: 28px; /* Large font size */
+    font-weight: bold; /* Bold font weight */
+}
+
+/* Hover effect for the close button (×) */
+.close:hover,
+.close:focus {
+    color: black; /* Black text */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Cursor on hover */
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(255, 255, 255, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal2-content {
+    background-color: #ffffff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style select dropdown */
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style text area */
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style submit button */
+input[type="submit"] {
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Change submit button color on hover */
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+.modal-content {
+    position: relative;
+    background-image: url('5667004.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation-name: animateTop;
+    animation-duration: 0.4s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS for the thank you message section */
+.thank-you-message {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-message h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.thank-you-message p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+.logo img {
+    filter: grayscale(100%);
+}
+
+
+.hero {
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+    background-image: url('5234064.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+}
+
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 1.9rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 20px;
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #17ff49;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS for congratulation emojis */
+/* CSS for congratulation emojis */
+.emoji {
+    position: absolute;
+    top: 0;
+    font-size: 24px; /* Adjust size as needed */
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { top: -50px; }
+    100% { top: 100%; }
+}
+
+#myModal3 .modal-content {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+  /* Dictionary section styles */
+  #dictionarySection {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-image: url('3132.jpg');
+    background-size: cover;
+    background-position: center;
+    color: rgb(0, 0, 0); /* Change text color for readability */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
   }
 
 
-  /* Base styles for the paragraph */
-  #popup p {
-    font-size: 24px; /* Adjust the size as needed */
+
+
+
+
+
+
+#dictionarySection {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  #dictionarySection h2 {
+    margin-bottom: 10px;
+  }
+  #dictionarySection input {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  #dictionarySection button {
+    padding: 5px 10px;
+  }
+  .definition-container {
+    margin-top: 20px;
+  }
+  .definition-container h3 {
+    margin-top: 10px;
+  }
+
+
+.card {
+    background-image: url('4907157.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+ 
 }
 
+
+
+
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: url('5234064.jpg') no-repeat center center fixed;
+    
+    background-size: cover;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        background-size: auto;
+    }
+}
+/* Header styles */
+header {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+   
+}
+
+.college-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 24px;
+   
+}
+
+header nav ul {
+    list-style-type: none;
+    color: #fff;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+  
+}
+
+header nav ul li a {
+    text-decoration: none;
+  
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #cde;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+   
+}
+
+/* Section styles */
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+   
+    font-size: 24px;
+}
+
+section p {
+    margin-bottom: 20px;
+  
+}
+
+/* Note buttons styles */
+.note-buttons {
+    margin-bottom: 20px;
+}
+
+.note-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.note-button:hover {
+    background-color: #0056b3;
+}
+
+/* Resource button styles */
+.resource-button {
+    padding: 12px 24px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.resource-button:hover {
+    background-color: #1b22a7;
+}
+
+/* Footer styles */
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-info, .social-media {
+    flex: 1;
+    text-align: left;
+}
+
+.contact-info h2, .social-media h2 {
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.social-media ul {
+    list-style-type: none;
+}
+
+.social-media ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-media ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #cde;
+}
+
+/* Copyright styles */
+.copyright {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 14px;
+}
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-bottom: 30px;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info, .social-media {
+        margin-bottom: 20px;
+    }
+}
+/* Add or update styles as needed */
+
+/* Hide the menu by default */
+/* Add or update styles as needed */
+
+/* Hide the menu by default */
+.menu {
+    display: none;
+}
+
+/* Styles for menu toggle button */
+.menu-toggle {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Styles for the menu when it's open */
+.menu.active {
+    display: block;
+}
+
+/* Styles for the menu items */
+.menu {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px solid #ff0000;
+}
+
+.menu li:last-child a {
+    border-bottom: none;
+}
+
+@media (min-width: 768px) {
+    /* Adjust menu toggle position for larger screens */
+    .menu-toggle {
+        display: none;
+    }
+    
+    /* Display menu items horizontally for larger screens */
+    .menu {
+        display: flex;
+    }
+    
+    .menu li {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+}
+.social-media a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #ffcc00; /* Change to your desired glowing color */
+}
+
+.glowing {
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ffcc00; /* Change to your desired glowing color */
+    }
+    100% {
+        text-shadow: 0 0 20px #ffcc00; /* Change to your desired glowing color */
+    }
+}
+.navbar .menu li a {
+    color: #4d4242;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover,
+.navbar .menu li a:focus {
+    color: #ffcc00; /* Change to your desired glowing color */
+}
+
+.glowing-nav:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffcc00; /* Change to your desired glowing color */
+    animation: glowing-nav 1s infinite;
+}
+
+@keyframes glowing-nav {
+    0% {
+        opacity: 0;
+        width: 0%;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 100%;
+    }
+}
+.logo-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.logo-img {
+    width: 40px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust spacing between logo and text */
+}
+
+.logo-container h1 {
+    margin: 0; /* Remove default margin */
+}
+.note-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px; /* Add some spacing between buttons */
+}
+
+@media screen and (min-width: 600px) {
+    /* For screens larger than 600px (typical laptops and desktops) */
+    .note-button {
+        display: inline-block;
+        width: auto;
+        margin-bottom: 0;
+        margin-right: 10px; /* Add some spacing between buttons */
+    }
+}
+.note-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px; /* Add some spacing between buttons */
+    text-align: center; /* Center the content horizontally */
+}
+
+@media screen and (min-width: 600px) {
+    /* For screens larger than 600px (typical laptops and desktops) */
+    .note-button {
+        display: inline-block;
+        width: auto;
+        margin-bottom: 0;
+        margin-right: 10px; /* Add some spacing between buttons */
+    }
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.dm-serif-display-regular {
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.logo-img {
+    width: 60px; /* Set width relative to the font size */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 7em; /* Set maximum height */
+    margin-bottom: 20px; /* Add some spacing between the heading and image */
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium font weight */
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: #000000;
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    margin-right: 10px; /* Adjust the spacing between the menu symbol and menu items */
+    cursor: pointer;
+    font-size: 24px; /* Adjust the font size of the menu symbol */
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px; /* Adjust the spacing between menu items */
+}
+
+.menu li:last-child {
+    margin-right: 0; /* Remove margin for the last menu item */
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px; /* Adjust the font size of menu items */
+}
+
+.menu a:hover {
+    color: #007bff; /* Change color on hover */
+}
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium font weight */
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: #000000;
+    text-align: center;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+        letter-spacing: 1px; /* Reduce letter spacing */
+        padding-bottom: 8px; /* Reduce padding bottom */
+        margin-bottom: 15px; /* Reduce margin bottom */
+    }
+    h2 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+        letter-spacing: 1px; /* Reduce letter spacing */
+        padding-bottom: 8px; /* Reduce padding bottom */
+        margin-bottom: 15px; /* Reduce margin bottom */
+    }
+}
+.menu-toggle {
+    margin-right: 10px; /* Adjust the default margin right */
+    cursor: pointer;
+    font-size: 24px; /* Adjust the font size of the menu symbol */
+    margin-left: auto; /* Push the menu button to the right */
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        margin-left: 0; /* Reset the left margin */
+        margin-right: 40px; /* Add some space between the logo and menu button */
+    }
+}
+/* Add your CSS styles for the feedback form */
+#feedback-form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 7px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00e83a;
+}
+.menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    padding: 5px 50px 5px 0; /* Add padding to the right side */
+    margin-right: 50px; /* Add margin to the right side */
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1); /* Make the button slightly larger on hover */
+}
+@media (max-width: 768px) {
+    .menu-toggle {
+        padding-right: 25px; /* Adjust padding on the right side for smaller screens */
+        margin-right: 25px; /* Adjust margin on the right side for smaller screens */
+    }
+}
+
+
+
+
+
+/* Style for Testimonials section */
+#testimonials {
+    margin-top: 50px;
+}
+
+.testimonial {
+    margin-bottom: 30px;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+
+blockquote:before {
+    content: open-quote;
+}
+
+blockquote:after {
+    content: close-quote;
+}
+
+cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    text-align: right;
+}
+
+
+/* Style for FAQ section */
+/* Center-align FAQ section */
+#faq {
+    margin-top: 50px;
+    text-align: center; /* Align content to center */
+}
+
+dl {
+    margin-bottom: 30px;
+    display: inline-block; /* Align dl element inline */
+    text-align: left; /* Reset text alignment for definition list items */
+}
+
+dt {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+dd {
+    margin-left: 0; /* Reset margin for definition description */
+    margin-bottom: 15px; /* Add some bottom margin for spacing */
+    text-align: left; 
+    /* Align description text to left */
+}
+
+
+/* Style for Discussion Forum section */
+/* Style for Discussion Forum section */
+#forum {
+    margin-top: 50px;
+    text-align: center; /* Align content to center */
+}
+
+#forum-form {
+    margin-bottom: 20px;
+    display: inline-block; /* Ensure the form is centered */
+    text-align: left; /* Reset text alignment for form elements */
+}
+
+#forum-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#forum-form input[type="text"],
+#forum-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+#forum-form button[type="submit"] {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#forum-form button[type="submit"]:hover {
+    background-color: #000000;
+}
+
+#discussion {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    text-align: left; /* Reset text alignment for discussion content */
+}
+
+.post {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    display: inline-block; /* Ensure posts are centered */
+    text-align: left; /* Reset text alignment for post content */
+}
+
+.post h3 {
+    margin-bottom: 5px;
+}
+
+.post p {
+    margin-bottom: 10px;
+}
+
+
+/* Style for Study Planner section */
+
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+textarea,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.task-actions {
+    margin-top: 5px;
+}
+
+.task-actions button {
+    margin-right: 5px;
+    background-color: #f44336;
+}
+
+.task-actions button.complete {
+    background-color: #00b906;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: auto;
+    display: none; /* Hide all images by default */
+    transition: opacity 1s ease; /* Add transition effect */
+}
+
+/* Optional: Add styles for slideshow navigation buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+
+
+
+
+
+
+
+/* Default text size for desktop */
+#about {
+    font-size: 25px; /* Adjust the size as needed */
+}
+
+/* Larger text size for mobile */
+@media (max-width: 768px) {
+    #about {
+        font-size: 20px; /* Adjust the size as needed for mobile */
+    }
+}
+
+/* Further adjust for very small screens if needed */
+@media (max-width: 480px) {
+    #about {
+        font-size: 20px; /* Adjust the size as needed for smaller mobile devices */
+    }
+}
+
+#about {
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#analytics-slideshow {
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+#branch-notes-collection {
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#notes {
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+#resources {
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+#chatbot{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#study-tool{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+#thank-you-message{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#resources{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#card-section{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#study-tool{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+#study-planner{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+#study-reminders{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#revision-tracker{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+#bookmark{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+#study-group-finder{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+
+#flashcard-maker{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+#goal-tracker{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#time-management{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+#file-upload{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#testimonials{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#faq{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+#forum{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+#feedback{
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+    color: #000000;
+    text-align: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+
+.privacy-section {
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    padding: 50px 20px;
+    color: #000000;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+}
+
+.card-section {
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    padding: 50px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.thank-you-message {
+    background-image: url('3132.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    color: #000000;
+    background-attachment: fixed; /* Keeps the image fixed in place when scrolling */
+}
+
+
+.thank-you-message {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.thank-you-message h3 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.thank-you-message img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.thank-you-message p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin: 0.5em 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Optional: Style for slideshow caption */
+.caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 0;
+}
+
+/* CSS for file upload section */
+#file-upload {
+    margin-top: 20px;
+}
+
+#file-upload h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#file-upload-form {
+    display: flex;
+    align-items: center;
+}
+
+#file-input {
+    margin-right: 10px;
+}
+
+#file-upload-form button {
+    padding: 8px 12px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#file-upload-form button:hover {
+    background-color: #000000;
+}
+
+/* End of CSS for file upload section */
+/* Add this CSS to your existing style.css file */
+
+/* Adjustments for mobile responsiveness */
+
+
+/* Adjustments for mobile responsiveness */
+
+/* Header Styles */
+header {
+    padding: 10px 0; /* Reduce padding */
+}
+
+/* Navigation Menu */
+.menu-toggle {
+    display: block; /* Ensure menu toggle is visible on small screens */
+}
+
+.menu {
+    display: none; /* Hide menu items by default */
+}
+
+.menu.active {
+    display: block; /* Show menu items when menu is active */
+}
+
+.menu li {
+    display: block; /* Display menu items vertically on small screens */
+    margin-bottom: 10px; /* Add spacing between menu items */
+}
+
+/* Container Styles */
+.container {
+    padding: 10px; /* Reduce padding */
+}
+
+/* Footer Styles */
+footer {
+    padding: 10px 0; /* Reduce padding */
+}
+
+/* Adjustments for specific screen sizes */
+@media screen and (min-width: 768px) {
+    /* Add specific styles for screens larger than 768px */
+    .menu-toggle {
+        display: none; /* Hide menu toggle on larger screens */
+    }
+    
+    .menu {
+        display: flex; /* Display menu items horizontally on larger screens */
+    }
+
+    .menu li {
+        display: inline-block; /* Display menu items inline on larger screens */
+        margin-bottom: 0; /* Reset margin */
+        margin-right: 20px; /* Add spacing between menu items */
+    }
+}
+/* Adjustments for mobile responsiveness */
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+
+
+#study-timer {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#study-timer h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#study-timer div {
+    margin-bottom: 20px;
+}
+
+#study-timer label {
+    font-size: 18px;
+    color: #555;
+}
+
+#study-timer input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#study-timer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#study-timer button:hover {
+    background-color: #0056b3;
+}
+
+#timer-display {
+    font-size: 36px;
+    text-align: center;
+}
+#bookmark {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#bookmark h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#bookmark label {
+    font-size: 18px;
+    color: #555;
+}
+
+#bookmark input[type="text"] {
+    width: 300px;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#bookmark button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#bookmark button:hover {
+    background-color: #0056b3;
+}
+
+#bookmark-list {
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0;
+}
+
+#bookmark-list li {
+    margin-bottom: 5px;
+}
+
+
+/* Dark mode styles */
+
+
+
+
+#revision-tracker {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#revision-tracker h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#subject-dropdown {
+    margin-bottom: 20px;
+}
+
+#subject-dropdown label {
+    font-size: 18px;
+    color: #555;
+}
+
+#subject-dropdown select {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#revision-progress {
+    margin-bottom: 20px;
+}
+
+#revision-progress label {
+    font-size: 18px;
+    color: #555;
+    margin-right: 10px;
+}
+
+#revision-progress-bar {
+    width: 100%;
+}
+
+#progress-label {
+    margin-left: 10px;
+}
+
+
+
+
+
+#study-reminders {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#study-reminders h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#study-reminders label {
+    font-size: 18px;
+    color: #555;
+}
+
+#study-reminders input[type="text"],
+#study-reminders input[type="datetime-local"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#study-reminders button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#study-reminders button:hover {
+    background-color: #000000;
+}
+
+#reminder-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#reminder-list li {
+    margin-bottom: 5px;
+}
+#file-upload {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#file-upload h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#file-upload-form {
+    margin-top: 20px;
+}
+
+#file-input {
+    margin-right: 10px;
+}
+
+#file-upload-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#file-upload-form button:hover {
+    background-color: #000000;
+}
+
+
+
+
+#study-session-timer {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#study-session-timer h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#timer-display {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#timer-controls button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#timer-controls button:hover {
+    background-color: #000000;
+}
+
+#timer-controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+
+
+#study-group-finder {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#study-group-finder h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+#study-group-form {
+    margin-bottom: 20px;
+}
+
+#study-group-form label {
+    font-size: 18px;
+    color: #555;
+    margin-right: 10px;
+}
+
+#study-group-form input[type="text"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#study-group-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#study-group-form button:hover {
+    background-color: #000000;
+}
+
+.study-group-listing {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.study-group-listing p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#testimonials {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#testimonials h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.testimonial {
+    margin-bottom: 30px;
+}
+
+.testimonial blockquote {
+    font-size: 18px;
+    color: #666;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.testimonial blockquote::before {
+    content: '\201C'; /* Left double quotation mark */
+    font-size: 36px;
+    color: #ccc;
+    margin-right: 10px;
+}
+
+.testimonial blockquote::after {
+    content: '\201D'; /* Right double quotation mark */
+    font-size: 36px;
+    color: #ccc;
+    margin-left: 10px;
+}
+
+.testimonial cite {
+    font-style: normal;
+    font-size: 16px;
+    color: #999;
+}
+
+/* Add more CSS styles as needed */
+#faq {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#faq h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+dl {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+dt {
+    font-weight: bold;
+    font-size: 18px;
+    color: #666;
+    margin-top: 20px;
+}
+
+dd {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+/* Add more CSS styles as needed */
+
+
+
+
+#about {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact-info {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background-color: #000000;
+}
+
+.contact-info h2 {
+    color: #ffffff;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.contact-info .email-link,
+.contact-info .phone-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info .email-link:hover,
+.contact-info .phone-link:hover {
+    text-decoration: underline;
+}
+p1 {
+    font-weight: bold;
+}
+.contact-info {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.contact-info  {
+    margin: 5px 0;
+}
+.contact-info .icon {
+    margin-right: 5px;
+}
+
+
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style for the footer container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style for the contact info and social media sections */
+.contact-info,
+.social-media {
+    flex: 1;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* Style for the horizontal rule */
+.separator {
+    border-top: 1px solid #ffffff;
+    margin: 20px auto;
+    width: 90%;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info,
+    .social-media {
+        flex: none;
+        width: auto;
+        margin: 10px 0;
+    }
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px; /* Adjust the width of the logo image */
+    margin-right: 10px; /* Add margin between the logo image and the text */
+}
+
+.logo-text {
+    font-size: 24px; /* Reduce the font size of the logo text */
+    padding-left: 10px; /* Add padding to the left of the logo text */
+}
+
+
+/* Center-align content in the section */
+#all-branches-notes {
+    text-align: center;
+}
+
+/* Style for the button */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000000; /* Green background color */
+    color: white; /* White text color */
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect */
+.button:hover {
+    background-color: #09a0dc; /* Darker green color on hover */
+}
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    display: none; /* Initially hidden */
+    z-index: 9999; /* Ensure it's above other content */
+  }
+  
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid #f3f3f3; /* Light gray border */
+    border-top: 4px solid #000000; /* Blue border for the spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite; /* Spin animation */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+
+  /* CSS styles for special effects */
+.special-effect-image {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 50%; /* for circular images */
+    transition: transform 0.3s ease-in-out;
+}
+
+.special-effect-image:hover {
+    transform: scale(1.1); /* scale up the image on hover */
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .special-effect-image {
+        width: 92%;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* Styling for the button */
+#chatbot button {
+    margin-bottom: 20px; /* Add margin-bottom to create space between button and video */
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Styling for the video container */
+.video-container {
+    margin-bottom: 20px; /* Add margin-bottom to create space between button and video */
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for the video container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    transition: box-shadow 0.3s; /* Smooth transition for the shadow effect */
+}
+
+
+
+
+/* Styling for the video container */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+    overflow: hidden;
+    border-radius: 8px; /* Rounded corners for the video container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    transition: box-shadow 0.3s; /* Smooth transition for the shadow effect */
+}
+
+/* Styling for the embedded iframe */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default border */
+}
+
+/* Special effects when hovering over the video container */
+.video-container:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase shadow intensity */
+    transform: scale(1.02); /* Scale up the video container */
+}
+
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Style for the chatbot icon */
+.chatbot-icon {
+    margin-right: 10px; /* Adjust spacing between the icon and text */
+}
+
+/* Additional styles for the section and button */
+#chatbot {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chatbot h2 {
+    margin-top: 0;
+    color: #000000;
+}
+
+#chatbot p {
+    color: #000000;
+}
+
+#chatbot button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#chatbot button:hover {
+    background-color: #2980b9;
+}
+
+.logo {
+    text-align: center; /* Center the logo horizontally */
+    margin-bottom: 20px; /* Add some spacing below the logo */
+}
+
+.logo img {
+    max-width: 500px; /* Set a maximum width for the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+@media only screen and (max-width: 600px) {
+    .logo img {
+        max-width: 90%; /* Adjust the maximum width of the logo for mobile screens */
+    }
+}
+
+
+
+
+.logo img {
+    /* Example 1: Adding a subtle box shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* Example 2: Adding a border radius for a softer look */
+    border-radius: 4px;
+
+    /* Example 3: Adding a slight brightness adjustment */
+    filter: brightness(95%);
+
+    /* Example 4: Adding a subtle grayscale effect */
+    filter: grayscale(10%);
+}
+
+
+
+.logo img {
+    /* Example 1: Adding a transition for smooth effect */
+    transition: transform 0.3s ease;
+
+    /* Example 2: Scaling up the image on hover */
+}
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Example 3: Adding a subtle shadow on hover */
+.logo img:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Example 4: Adding a grayscale effect on hover */
+.logo img:hover {
+    filter: grayscale(100%);
+}
+
+
+
+/* CSS for FAQ section */
+
+/* FAQ container */
+#faq {
+    margin-bottom: 20px;
+  }
+  
+  /* FAQ title */
+  #faq h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333; /* Dark color for better readability */
+  }
+  
+  /* Questions */
+  #faq dt {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555; /* Slightly darker color for questions */
+  }
+  
+  /* Answers */
+  #faq dd {
+    margin-bottom: 20px;
+    color: #666; /* Slightly darker color for answers */
+  }
+  
+  /* Alternate background color for questions */
+  #faq dt:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray background for alternate questions */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  /* Increase spacing between questions and answers */
+  #faq dt,
+  #faq dd {
+    padding: 10px; /* Add padding for better spacing */
+  }
+  
+  /* Add border-bottom to questions */
+  #faq dt {
+    border-bottom: 1px solid #ddd; /* Light gray border bottom for questions */
+  }
+
+  
+
+  /* CSS for testimonials section */
+
+/* Style for testimonial container */
+.testimonial {
+    margin-bottom: 20px;
+  }
+  
+  /* Style for blockquote */
+  .testimonial blockquote {
+    font-style: italic;
+    padding: 10px;
+    border-left: 5px solid #333; /* Add a left border for emphasis */
+    background-color: #f9f9f9; /* Add a light background color */
+  }
+  
+  /* Style for cite */
+  .testimonial cite {
+    display: block; /* Display the citation name on a new line */
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333; /* Set the color of the citation name */
+  }
+
+  
+  #feedback {
+    text-align: center; /* Center-align the text */
+}
+
+#feedback-form {
+    display: inline-block; /* Ensure the form stays inline */
+    text-align: left; /* Reset text alignment for form elements */
+}
+
+#success-message {
+    margin-top: 10px; /* Add some space between the form and success message */
+    text-align: center; /* Center-align the success message */
+}
+
+
+#flashcard-maker {
+    margin-top: 50px;
+}
+
+#flashcard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flashcard {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    perspective: 1000px; /* Adds 3D effect */
+}
+
+.flashcard h3 {
+    margin: 10px 0;
+}
+
+.flashcard textarea {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.flashcard-front, .flashcard-back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden; /* Ensures back face is not visible until flipped */
+    transition: transform 0.5s; /* Smooth transition for flipping effect */
+}
+
+.flashcard-front {
+    background-color: #f9f9f9;
+    transform: rotateY(0deg); /* Initial state */
+}
+
+.flashcard-back {
+    background-color: #e6f3ff;
+    transform: rotateY(180deg); /* Initially flipped */
+}
+
+.flashcard.flipped .flashcard-front {
+    transform: rotateY(-180deg); /* Flipped state */
+}
+
+.flashcard.flipped .flashcard-back {
+    transform: rotateY(0deg); /* Flipped state */
+}
+
+
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); 
+    /* Semi-transparent white background */
+    display: none; /* Initially hidden */
+    z-index: 9999; /* Ensure it's above other content */
+  }
+  
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid #000000; /* Light gray border */
+    border-top: 4px solid #ffffff; /* Blue border for the spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite; /* Spin animation */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#goal-tracker {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#goal-list {
+    margin-top: 20px;
+}
+
+.goal-item {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 3px solid #007bff;
+}
+
+.goal-item:last-child {
+    margin-bottom: 0;
+}
+
+.goal-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+label {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+
+
+
+
+#time-management {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#schedule {
+    margin-top: 20px;
+}
+
+.time-block {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.time-block:last-child {
+    margin-bottom: 0;
+}
+
+.time-block p {
+    margin: 0;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(0, 120, 248);
+}
+
+input[type="text"],
+input[type="time"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color:#000000;
+}
+
+label {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* 90% of viewport width */
+    max-width: 800px; /* Maximum width */
+    overflow-y: auto; /* Enable vertical scroll */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Make the pre tag responsive */
+pre {
+    white-space: pre-wrap; /* Wrap long lines */
+    font-size: 14px; /* Adjust font size */
+}
+
+/* Make the text inside pre tag responsive */
+pre * {
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* 90% of viewport width */
+    max-width: 800px; /* Maximum width */
+    overflow-y: auto; /* Enable vertical scroll */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Make the pre tag responsive */
+pre {
+    white-space: pre-wrap; /* Wrap long lines */
+    font-size: 14px; /* Adjust font size */
+}
+
+/* Make the text inside pre tag responsive */
+pre * {
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+#study-tool {
+    text-align: center;
+    max-width: 800px; /* Adjust the max-width as needed */
+    margin: 0 auto;
+}
+
+.tool-content {
+    margin-top: 20px; /* Adjust spacing between video and content */
+}
+
+.website-button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #000000; /* Blue color, you can change this */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.website-button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+
+
+
+
+/* Adjust the size of the logo */
+.modal-content img {
+    filter: invert(1);
+}
+
+.modal-content img {
+    filter: invert(1);
+    max-width: 200px; /* Adjust the maximum width as needed */
+    max-height: 100px; /* Adjust the maximum height as needed */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+
+.privacy-button {
+    background-color: #000000; /* Green */
+    border: none;
+    color: rgb(214, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.privacy-section {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.privacy-section h2 {
+    color: #333;
+}
+
+.privacy-section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.bottom-nav .nav-item {
+    color: #000000;
+    text-align: center;
+    flex: 1;
+    text-decoration: none;
+    margin: 5px 0; /* Add margin for spacing */
+}
+
+.bottom-nav .nav-item i {
+    display: block;
+    font-size: 24px;
+}
+
+.bottom-nav .nav-item span {
+    font-size: 12px;
+}
+
+.bottom-nav .nav-item:hover {
+    color: #0f0; /* Change to green on hover */
+}
+
+body {
+    padding-bottom: 80px; /* To avoid content being hidden behind the bottom nav */
+}
+
+
+
+
+
+#about {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card p {
+    color: #555;
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #000000;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.card-button:hover {
+    background-color: #000000;
+}
+
+
+.card-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.academic-pal-card {
+    background-color: #000000; /* Slightly lighter black for cards */
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.academic-pal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.academic-pal-card .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.academic-pal-card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    margin: 10px 0;
+    color: #fff; /* White text */
+}
+
+.academic-pal-card p {
+    font-family: 'Baskervville', serif;
+    font-size: 16px;
+    color: #bbb; /* Light grey text for better readability */
+    margin-bottom: 20px;
+}
+
+.academic-pal-card button {
+    background-color: #fff; /* White button */
+    color: #000; /* Black text on button */
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.academic-pal-card button:hover {
+    background-color: #000; /* Black background on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .academic-pal-card {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .academic-pal-card h2 {
+        font-size: 20px;
+    }
+
+    .academic-pal-card p {
+        font-size: 14px;
+    }
+
+    .academic-pal-card button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+
+
+
+#myModal3 .modal-content p {
+    text-align: center;
+}
