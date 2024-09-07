@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Pal First-Year Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Baskervville+SC&family=Black+Ops+One&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGDizIH8HMP5y6qTldEpO8VZEd6X0UiSrYFw&usqp=CAU" type="image/x-icon" style="filter: grayscale(100%);">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6939886551698646" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6YYNZVB1W1');
+    </script>
+    <style>
+        /* Add your CSS styles here */
+        #popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('5570869.jpg'); /* Set the background image */
+    background-size: cover; /* Ensures the image covers the entire popup */
+    background-position: center; /* Centers the background image */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    color: rgb(0, 0, 0); /* Set the text color to contrast with the background image */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="logos">
+                <img src="university_logo.png" alt="University Logo">
+            </div>
+            <div class="tagline">
+                <h1 class="cinzel-unique">Academic Pal</h1>
+                <p >Your ultimate resource for academic success</p>
+            </div>
+            <h2 class="bebas-neue-regular">Academic Pal First-Year Login</h2>
+            <form id="login-form" onsubmit="submitForm(event)">
+                <div>
+                    <i class="fa fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Name" class="neuton-regular" required>
+                </div>
+                <br>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <input type="text" id="email" name="email" placeholder="Email ID (nu24XXXXX@nmamit.in)" class="neuton-regular" required>
+                </div>
+                <br>
+                <button type="submit" id="login-btn" class="russo-one-regular">
+                    <i class="fa fa-sign-in-alt"></i> Login
+                </button>
+            </form>
+        </div>
+    </header>
+
+    <div id="popup">
+        <img src="university_logo.png" alt="Academic Pal Logo">
+        <p id="popup-message" class="bebas-neue-regular"></p>
+    </div>
+
+    <script>
+      const formUrl = 'https://usebasin.com/f/f830d525824e'; // URL to send form data to
+
+async function submitForm(event) {
+    event.preventDefault();
+    if (validateForm()) {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value.toLowerCase();
+        const usn = email.slice(0, 7);
+        const branchCode = email.charAt(4).toLowerCase();
+        const year = email.slice(2, 4);
+
+        let branchText = '';
+
+        switch(branchCode) {
+            case 'a':
+            case 'b':
+            case 'c':
+            case 'd':
+                branchText = branchCode === 'd' ? 'Full Stack Development' : 'Computer Science Engineering';
+                break;
+            case 'f':
+            case 'g':
+            case 'h':
+            case 'i':
+                branchText = 'Information Science Engineering';
+                break;
+            case 'q':
+            case 'r':
+            case 's':
+                branchText = 'Electronics & Communication Engineering';
+                break;
+            case 'u':
+                branchText = 'VLSI Design & Technology';
+                break;
+            case 'z':
+                branchText = 'Civil Engineering';
+                break;
+            default:
+                branchText = 'Unknown';
+                break;
+        }
+
+        // Prepare the data to send to the remote server
+        const data = {
+            name: name,
+            email: email,
+            usn: usn,
+            year: 'First Year',
+            branch: branchText
+        };
+
+        try {
+            // Send the data to the remote server
+            const response = await fetch(formUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                // Show the popup after successful data submission
+                const popupMessage = document.getElementById("popup-message");
+                popupMessage.innerHTML = `
+                    <i class="fa-solid fa-check-circle" style="color:green;"></i> Welcome, <b>${name}</b>!<br>
+                    <i class="fa-solid fa-user"></i> Your login was successful.<br>
+                    <i class="fa-solid fa-id-badge"></i> Your USN is: <b>${usn}</b><br>
+                    <i class="fa-solid fa-graduation-cap"></i> Your Year: <b>First Year</b><br>
+                    <i class="fa-solid fa-building-columns"></i> Your Branch: <b>${branchText}</b>.<br>
+                    <i class="fa-solid fa-smile-beam" style="color:orange;"></i> We're excited to have you on board!
+                `;
+
+                const popup = document.getElementById("popup");
+                popup.style.display = "block";
+
+                setTimeout(function() {
+                    popup.style.display = "none";
+                    window.location.href = "https://academicpal.vercel.app/";
+                }, 9000);
+            } else {
+                alert("Failed to submit data. Please try again.");
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert("An error occurred while submitting the data. Please try again.");
+        }
+    }
+}
+
+function validateForm() {
+    const emailPattern = /^nu24[a-z]\d{2}@nmamit\.in$/i;
+    const emailInput = document.getElementById("email").value;
+    if (!emailPattern.test(emailInput)) {
+        alert("Please enter a valid Email ID.");
+        return false;
+    }
+    return true;
+}
+
+
+    </script>
+   
+</body>
+</html>

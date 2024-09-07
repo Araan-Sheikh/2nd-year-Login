@@ -1,0 +1,553 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('5570869.jpg') no-repeat center center fixed;
+    
+    background-size: cover; /* Cover ensures the image covers the entire background */
+    background-attachment: fixed; /* Keeps the background fixed as the user scrolls */
+    color: #000;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+.cinzel-unique {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+  
+  
+
+#logos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#logo img {
+    width: 150px;
+    margin: 0 10px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: calc(100% - 22px);
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 999;
+    text-align: center;
+}
+
+#popup img {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+#popup-message {
+    margin-top: 20px;
+}
+
+.pictures {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.pictures img {
+    width: 150px;
+    margin: 0 10px;
+}
+
+.download-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.download-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.download-button:active {
+    background-color: #666;
+    transform: translateY(0);
+}
+
+.download-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Media Query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .pictures img {
+        width: 100%;
+    }
+}
+#logos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#logos img {
+    width: 150px;
+    margin: 0 10px;
+}
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+}
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+button {
+    width: calc(100% - 22px);
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #333;
+}
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 999;
+}
+#popup img {
+    width: 100px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #ffffff; /* Change background color */
+    color: #000000; /* Change text color */
+    text-align: center;
+    z-index: 999;
+}
+#popup img {
+    width: 300px;
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure image is displayed as block element */
+    filter: invert(1); /* Invert logo colors */
+}
+#popup-message {
+    margin-top: 20px;
+}
+.pictures {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.pictures img {
+    width: 150px;
+    margin: 0 10px;
+}
+
+#logos img {
+    width: 300px;
+    margin: 0 10px;
+    filter: invert(1); /* Invert logo colors */
+}
+#logo img {
+    width: 300px;
+    margin: 0 10px;
+    filter: invert(1); /* Invert logo colors */
+}
+
+.pictures {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.pictures img {
+    width: 500px;
+    height: 300px; /* Increased width for desktop */
+    margin: 0 10px;
+}
+
+/* Media Query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .pictures img {
+        width: 500px; /* Reduced width for mobile */
+    }
+}
+
+
+.russo-one-regular {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+/* CSS for the tagline */
+.tagline {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.tagline h1 {
+    font-size: 1.7em;
+   
+    color: #333; /* Adjust the color as needed */
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .tagline h1 {
+        font-size: 2.0em; /* Adjust font size for smaller screens */
+    }
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.tagline p {
+    font-size: 1.2em;
+    font-family: 'Neuton', serif;
+    color: #666; /* Adjust the color as needed */
+    margin: 5px 0 0 0;
+}
+
+
+/* Add this CSS to style.css or inside a <style> tag in the HTML head */
+.download-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-button {
+    background-color: #000000; /* Yellow color for the button */
+    color: #ffffff; /* Black color for the text */
+    border: none;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.download-button:hover {
+    background-color: #000000; /* Slightly darker yellow for hover effect */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.download-button:active {
+    background-color: #000000; /* Even darker yellow for active state */
+    transform: translateY(0); /* Reset lift effect */
+}
+
+.download-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.5); /* Yellow focus ring */
+}
+
+
+
+
+
+/* styles.css */
+
+/* Login container styles */
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* Chat icon styles */
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chat-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Chat box styles */
+.chat-box {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 350px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.chat-header, .chat-footer {
+    padding: 15px;
+    background-color: #000000;
+    color: white;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+   
+ 
+}
+
+#close-chat {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-right: 50px; /* Adjust margin for positioning */
+}
+
+#close-chat:hover {
+    transform: scale(1.2);
+    margin-right: 50px;
+}
+
+
+.chat-body {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.chat-body p {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+}
+
+.chat-body p strong {
+    color: #555;
+    font-size: 0.85em;
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+}
+
+#chat-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#send-message {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-message:hover {
+    background-color: #218838;
+}
+
+/* Button styles */
+button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 2px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+/* Chat system responsiveness */
+@media (max-width: 768px) {
+    .chat-box {
+        width: 90%;
+        right: 5%;
+        bottom: 10%;
+    }
+
+    .chat-icon {
+        padding: 10px;
+    }
+
+    #chat-input {
+        padding: 8px;
+    }
+
+    #send-message {
+        padding: 8px 12px;
+    }
+
+    button {
+        padding: 5px 10px;
+    }
+}
+
+/* Base styles for the buttons */
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    #login-btn,
+    #first-year-btn {
+        height: 40px; /* Increase the height */
+    }
+}
+
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+
+
+
+.anton-sc-regular {
+    font-family: "Anton SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .black-ops-one-regular {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+  .neuton-regular {
+    font-family: "Neuton", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+  /* Base styles for the paragraph */
+  #popup p {
+    font-size: 24px; /* Adjust the size as needed */
+}
+
