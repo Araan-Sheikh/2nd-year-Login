@@ -121,7 +121,7 @@
                 </div>
                 <div>
                     <i class="fa fa-envelope"></i>
-                    <input type="text" id="email" name="email" placeholder="Email ID (NNM23XXXXX@nmamit.in)" required>
+                    <input type="text" id="email" name="email" placeholder="NMAMIT Email ID " required>
                 </div>
                 <button type="submit">
                     <i class="fa fa-sign-in-alt"></i> Login
@@ -149,6 +149,8 @@
 
 async function submitForm(event) {
     event.preventDefault();
+
+    // Proceed only if form validation passes
     if (validateForm()) {
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value.toLowerCase();
@@ -174,6 +176,8 @@ async function submitForm(event) {
             branchText = 'Electronics & Communication Engineering';
         } else if (branchCode === 'ac') {
             branchText = 'ECE - ACT Branch';
+        } else if (branchCode === 'vs') {
+            branchText = 'VLSI Design and Embedded Systems';
         } else if (branchCode === 'cy') {
             branchText = 'Cyber Security';
         } else if (branchCode === 'me') {
@@ -215,7 +219,7 @@ async function submitForm(event) {
                 setTimeout(() => {
                     document.getElementById("popup").style.display = 'none';
                     window.location.href = "https://academicpal.vercel.app/#google_vignette";
-                }, 7000); // Hide the popup after 9 seconds and redirect
+                }, 7000); // Hide the popup after 7 seconds and redirect
             } else {
                 console.error('Error:', response.statusText);
                 alert("Failed to submit data. Please try again.");
@@ -231,12 +235,24 @@ function validateForm() {
     const email = document.getElementById("email").value.toLowerCase();
     const name = document.getElementById("name").value.trim();
 
-    // Updated regular expression to match the email pattern
-    const emailPattern = /^nnm23[a-z]{2}\d{3}@nmamit\.in$/;
+    // Regular expression to match the email pattern
+    const emailPattern = /^nnm23([a-z]{2})\d{3}@nmamit\.in$/;
 
     // Check if the email matches the pattern
     if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address");
+        alert("Please enter a valid email address ");
+        return false;
+    }
+
+    // Extract branch code (6th and 7th characters)
+    const branchCode = email.slice(5, 7);
+
+    // List of valid branch codes
+    const validBranchCodes = ['cs', 'is', 'am', 'ad', 'ri', 'ec', 'ac', 'vs', 'cy', 'me'];
+
+    // Check if the branch code is valid
+    if (!validBranchCodes.includes(branchCode)) {
+        alert("The branch code in the email is invalid.");
         return false;
     }
 
