@@ -90,7 +90,7 @@
     .install-button, .student-button {
         font-size: 14px; /* Further reduce button font size */
         padding: 10px 0px; /* Adjust padding for better layout */
-        width: 100%; /* Buttons will stack and take full width */
+        width: 90%; /* Buttons will stack and take full width */
     }
 
     .install-button i, .student-button i {
@@ -126,9 +126,6 @@
                 <button type="submit">
                     <i class="fa fa-sign-in-alt"></i> Login
                 </button>
-                <a href="https://academic-pal-entry-page-2.vercel.app/" class="student-button  fjalla-one-regular">
-                    <i class="fa fa-info-circle"></i> First Year Students Click Here
-                </a>
             </form>
         </div>
     </header>
@@ -139,64 +136,166 @@
         <img src="university_logo.png" alt="Academic Pal Logo">
         <p id="popup-message" class="bebas-neue-regular"></p>
     </div>
+<script>
+    const formUrls = {
+        firstScript: 'https://usebasin.com/f/119065782b5f',
+        thirdScript: 'https://usebasin.com/f/119065782b5f',
+        secondScript: 'https://usebasin.com/f/f830d525824e'
+    };
 
-    
+    async function submitForm(event) {
+        event.preventDefault();
 
-    <script>
-       
+        if (validateForm()) {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value.toLowerCase();
+            let usn, branchCode, year, branchText;
 
-       const formUrl = 'https://usebasin.com/f/119065782b5f'; // Remote server to send form data to
+            // using nested if to check the year
+            if(/^nnm\d{2}[a-z]{2}\d{3}@nmamit\.in$/i.test(email)) {
+                // third year if loop
+if(/^nnm22[a-z]{2}\d{3}@nmamit\.in$/i.test(email))               
+                {usn = email.slice(0, 10).toUpperCase();
+                branchCode = email.slice(5, 7).toLowerCase();
+                year = 'Third Year';              
+ switch (branchCode) {
+                    case 'cs':
+                        branchText = (parseInt(email.slice(7, 10), 10) < 238 || parseInt(email.slice(7, 10), 10) > 292)
+                            ? 'Computer Science Engineering'
+                            : 'Computer Science Full Stack Development';
+                        break;
+                    case 'is':
+                        branchText = 'Information Science Engineering';
+                        break;
+                    case 'am':
+                        branchText = 'Artificial Intelligence & Machine Learning';
+                        break;
+                    case 'ad':
+                        branchText = 'Artificial Intelligence & Data Science';
+                        break;
+                    case 'ri':
+                        branchText = 'Robotics & Artificial Intelligence';
+                        break;
+                    case 'ec':
+                        branchText = 'Electronics & Communication Engineering';
+                        break;
+                    case 'ac':
+                        branchText = 'ECE - ACT Branch';
+                        break;
+                    case 'vs':
+                        branchText = 'VLSI Design and Embedded Systems';
+                        break;
+                    case 'cy':
+                        branchText = 'Cyber Security';
+                        break;
+                    case 'me':
+                        branchText = 'Mechanical Engineering';
+                        break;
+                    default:
+                        branchText = 'Unknown Branch';
+                        break;
+                }
 
-async function submitForm(event) {
-    event.preventDefault();
+                await sendFormData(formUrls.firstScript, name, email, usn, year, branchText);}
+                // second year if
+              else if(/^nnm23[a-z]{2}\d{3}@nmamit\.in$/i.test(email))               
+                {usn = email.slice(0, 10).toUpperCase();
+                branchCode = email.slice(5, 7).toLowerCase();
+                year = 'Second Year';
 
-    // Proceed only if form validation passes
-    if (validateForm()) {
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value.toLowerCase();
-        const usn = email.slice(0, 10).toUpperCase();
-        const branchCode = email.slice(5, 7).toLowerCase();
-        const lastThree = parseInt(email.slice(7, 10), 10);
-        let branchText = '';
+                switch (branchCode) {
+                    case 'cs':
+                        branchText = (parseInt(email.slice(7, 10), 10) < 238 || parseInt(email.slice(7, 10), 10) > 292)
+                            ? 'Computer Science Engineering'
+                            : 'Computer Science Full Stack Development';
+                        break;
+                    case 'is':
+                        branchText = 'Information Science Engineering';
+                        break;
+                    case 'am':
+                        branchText = 'Artificial Intelligence & Machine Learning';
+                        break;
+                    case 'ad':
+                        branchText = 'Artificial Intelligence & Data Science';
+                        break;
+                    case 'ri':
+                        branchText = 'Robotics & Artificial Intelligence';
+                        break;
+                    case 'ec':
+                        branchText = 'Electronics & Communication Engineering';
+                        break;
+                    case 'ac':
+                        branchText = 'ECE - ACT Branch';
+                        break;
+                    case 'vs':
+                        branchText = 'VLSI Design and Embedded Systems';
+                        break;
+                    case 'cy':
+                        branchText = 'Cyber Security';
+                        break;
+                    case 'me':
+                        branchText = 'Mechanical Engineering';
+                        break;
+                    default:
+                        branchText = 'Unknown Branch';
+                        break;
+                }
 
-        // Branch determination based on email pattern
-        if (branchCode === 'cs' && (lastThree < 238 || lastThree > 292)) {
-            branchText = 'Computer Science Engineering';
-        } else if (branchCode === 'cs' && lastThree >= 238 && lastThree <= 292) {
-            branchText = 'Computer Science Full Stack Development';
-        } else if (branchCode === 'is') {
-            branchText = 'Information Science Engineering';
-        } else if (branchCode === 'am') {
-            branchText = 'Artificial Intelligence & Machine Learning';
-        } else if (branchCode === 'ad') {
-            branchText = 'Artificial Intelligence & Data Science';
-        } else if (branchCode === 'ri') {
-            branchText = 'Robotics & Artificial Intelligence';
-        } else if (branchCode === 'ec') {
-            branchText = 'Electronics & Communication Engineering';
-        } else if (branchCode === 'ac') {
-            branchText = 'ECE - ACT Branch';
-        } else if (branchCode === 'vs') {
-            branchText = 'VLSI Design and Embedded Systems';
-        } else if (branchCode === 'cy') {
-            branchText = 'Cyber Security';
-        } else if (branchCode === 'me') {
-            branchText = 'Mechanical Engineering';
-        } else {
-            branchText = 'Unknown Branch';
+                await sendFormData(formUrls.thirdScript, name, email, usn, year, branchText);}
+
+            } else if (/^nu24[a-z]\d{2}@nmamit\.in$/i.test(email)) {
+                // first year if loop
+                usn = email.slice(0, 7);
+                branchCode = email.charAt(4).toLowerCase();
+                year = 'First Year';
+
+                switch (branchCode) {
+                    case 'a':
+                    case 'b':
+                    case 'c':
+                    case 'd':
+                        branchText = branchCode === 'd' ? 'Full Stack Development' : 'Computer Science Engineering';
+                        break;
+                    case 'f':
+                    case 'g':
+                    case 'h':
+                    case 'i':
+                        branchText = 'Information Science Engineering';
+                        break;
+                    case 'q':
+                    case 'r':
+                    case 's':
+                        branchText = 'Electronics & Communication Engineering';
+                        break;
+                    case 'u':
+                        branchText = 'VLSI Design & Technology';
+                        break;
+                    case 'z':
+                        branchText = 'Civil Engineering';
+                        break;
+                    default:
+                        branchText = 'Unknown';
+                        break;
+                }
+
+                await sendFormData(formUrls.secondScript, name, email, usn, year, branchText);
+            } else {
+                alert("Email format does not match any known patterns.");
+            }
         }
+    }
 
-        // Prepare data to send to the remote server
+    async function sendFormData(url, name, email, usn, year, branch) {
         const data = {
             name: name,
             email: email,
             usn: usn,
-            year: 'Second Year',
-            branch: branchText
+            year: year,
+            branch: branch
         };
 
         try {
-            const response = await fetch(formUrl, {
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -211,15 +310,16 @@ async function submitForm(event) {
                     <i class="fa-solid fa-check-circle" style="color:green;"></i> Welcome, <b>${name}</b>!<br>
                     <i class="fa-solid fa-user"></i> Your login was successful.<br>
                     <i class="fa-solid fa-id-badge"></i> Your USN is: <b>${usn}</b><br>
-                    <i class="fa-solid fa-graduation-cap"></i> Your Year: <b>Second Year</b><br>
-                    <i class="fa-solid fa-building-columns"></i> Your Branch: <b>${branchText}</b>.<br>
+                    <i class="fa-solid fa-graduation-cap"></i> Your Year: <b>${year}</b><br>
+                    <i class="fa-solid fa-building-columns"></i> Your Branch: <b>${branch}</b>.<br>
                     <i class="fa-solid fa-smile-beam" style="color:orange;"></i> We're excited to have you on board!
                 `;
                 document.getElementById("popup").style.display = 'block';
+
                 setTimeout(() => {
                     document.getElementById("popup").style.display = 'none';
-                    window.location.href = "https://academicpal.vercel.app/#google_vignette";
-                }, 7000); // Hide the popup after 7 seconds and redirect
+                    window.location.href = "https://academicpal.nmamit.co.in/";
+                }, 5000); // time taken to redirect to Academic Pal 
             } else {
                 console.error('Error:', response.statusText);
                 alert("Failed to submit data. Please try again.");
@@ -229,44 +329,28 @@ async function submitForm(event) {
             alert("An error occurred while submitting the data. Please try again.");
         }
     }
-}
 
-function validateForm() {
-    const email = document.getElementById("email").value.toLowerCase();
-    const name = document.getElementById("name").value.trim();
+    function validateForm() {
+        const email = document.getElementById("email").value.toLowerCase();
+        const name = document.getElementById("name").value.trim();
+// checking if all conditions are met
+        const firstScriptPattern = /^nnm23[a-z]{2}\d{3}@nmamit\.in$/i;
+        const thirdScriptPattern = /^nnm22[a-z]{2}\d{3}@nmamit\.in$/i;
+        const secondScriptPattern = /^nu24[a-z]\d{2}@nmamit\.in$/i;
 
-    // Regular expression to match the email pattern
-    const emailPattern = /^nnm23([a-z]{2})\d{3}@nmamit\.in$/;
+        if (!firstScriptPattern.test(email) && !secondScriptPattern.test(email) && !thirdScriptPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+        }
 
-    // Check if the email matches the pattern
-    if (!emailPattern.test(email)) {
-        alert("Please enter a valid email address ");
-        return false;
+        if (name === "") {
+            alert("Name cannot be empty.");
+            return false;
+        }
+
+        return true;
     }
+</script>
 
-    // Extract branch code (6th and 7th characters)
-    const branchCode = email.slice(5, 7);
-
-    // List of valid branch codes
-    const validBranchCodes = ['cs', 'is', 'am', 'ad', 'ri', 'ec', 'ac', 'vs', 'cy', 'me'];
-
-    // Check if the branch code is valid
-    if (!validBranchCodes.includes(branchCode)) {
-        alert("The branch code in the email is invalid.");
-        return false;
-    }
-
-    // Check if the name field is not empty
-    if (name === "") {
-        alert("Name cannot be empty");
-        return false;
-    }
-
-    // All validations passed
-    return true;
-}
-
-
-    </script>
 </body>
 </html>
