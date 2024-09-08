@@ -191,6 +191,9 @@ if(/^nnm22[a-z]{2}\d{3}@nmamit\.in$/i.test(email))
                     case 'me':
                         branchText = 'Mechanical Engineering';
                         break;
+                    case 'cc':
+                        branchText = 'Computer and Communication Engineering';
+                        break;
                     default:
                         branchText = 'Unknown Branch';
                         break;
@@ -236,6 +239,9 @@ if(/^nnm22[a-z]{2}\d{3}@nmamit\.in$/i.test(email))
                     case 'me':
                         branchText = 'Mechanical Engineering';
                         break;
+                    case 'cc':
+                        branchText = 'Computer and Communication Engineering';
+                        break;
                     default:
                         branchText = 'Unknown Branch';
                         break;
@@ -254,7 +260,8 @@ if(/^nnm22[a-z]{2}\d{3}@nmamit\.in$/i.test(email))
                     case 'b':
                     case 'c':
                     case 'd':
-                        branchText = branchCode === 'd' ? 'Full Stack Development' : 'Computer Science Engineering';
+                    case 'e':    
+                        branchText = branchCode === 'e' ? 'Full Stack Development' : 'Computer Science Engineering';
                         break;
                     case 'f':
                     case 'g':
