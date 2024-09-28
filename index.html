@@ -21,7 +21,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-   <!-- Google tag (gtag.js) -->
+ <script>var mediaQuery = window.matchMedia("(max-width: 600px)");
+function handleMediaChange(e) {
+    if (e.matches) {
+        // Code for small screens
+    } else {
+        // Code for larger screens
+    }
+}
+mediaQuery.addListener(handleMediaChange);
+handleMediaChange(mediaQuery);</script>
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YYNZVB1W1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
